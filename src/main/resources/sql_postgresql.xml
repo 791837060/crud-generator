@@ -7,7 +7,7 @@
 
     <!--查询表字段-->
     <select id="QUERY_TABLE_COLUMNS">
-        select c.relname AS table_name,
+        <!--select c.relname AS table_name,
             cast(obj_description(relfilenode,'pg_class') as varchar) AS table_comment,
             a.attname AS column_name,
             d.description AS column_comment,
@@ -23,6 +23,25 @@
         and a.atttypid = t.oid
         and  d.objoid=a.attrelid
         and d.objsubid=a.attnum
+        order by a.attnum ASC-->
+        select c.relname AS table_name,
+        cast(obj_description(relfilenode,'pg_class') as varchar) AS table_comment,
+        a.attname AS column_name,
+        -- d.description AS column_comment,
+        '' AS column_comment,
+        t.typname as typename,
+        concat_ws('',t.typname,SUBSTRING(format_type(a.atttypid,a.atttypmod) from '\(.*\)')) as culumn_type,
+        t.typlen as length1,
+        a.atttypmod-4 as length2,
+        a.attnotnull
+        from pg_class c, pg_attribute a , pg_type t
+        -- , pg_description d
+        where c.relname = '%s'
+        and a.attnum>0
+        and a.attrelid = c.oid
+        and a.atttypid = t.oid
+        -- and  d.objoid=a.attrelid
+        -- and d.objsubid=a.attnum
         order by a.attnum ASC
     </select>
 

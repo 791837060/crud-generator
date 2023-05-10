@@ -1,0 +1,495 @@
+{
+  "info": {
+    "_postman_id": "82d4421d-4523-409d-ba23-43b0dd4b2f45",
+    "name": "market服务API接口",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "分页查询market数据",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "6ceba4fb-e23a-47b4-af45-f8896ee4a1b2",
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": []
+        },
+        "url": {
+          "raw": "{{baseURL}}/market/getMarketList",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "market",
+            "getMarketList"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "",
+              "description": "id"
+            },
+                        {
+              "key": "marketId",
+              "value": "",
+              "description": "market_id"
+            },
+                        {
+              "key": "marketCode",
+              "value": "",
+              "description": "market_code"
+            },
+                        {
+              "key": "name",
+              "value": "",
+              "description": "name"
+            },
+                        {
+              "key": "marketType",
+              "value": "",
+              "description": "market_type"
+            },
+                        {
+              "key": "spreadType",
+              "value": "",
+              "description": "spread_type"
+            },
+                        {
+              "key": "baseId",
+              "value": "",
+              "description": "base_id"
+            },
+                        {
+              "key": "baseInst",
+              "value": "",
+              "description": "base_inst"
+            },
+                        {
+              "key": "counterId",
+              "value": "",
+              "description": "counter_id"
+            },
+                        {
+              "key": "counterInst",
+              "value": "",
+              "description": "counter_inst"
+            },
+                        {
+              "key": "collateralType",
+              "value": "",
+              "description": "collateral_type"
+            },
+                        {
+              "key": "cycleType",
+              "value": "",
+              "description": "cycle_type"
+            },
+                        {
+              "key": "marginCurrency",
+              "value": "",
+              "description": "margin_currency"
+            },
+                        {
+              "key": "contractValCurrency",
+              "value": "",
+              "description": "contract_val_currency"
+            },
+                        {
+              "key": "referencePair",
+              "value": "",
+              "description": "reference_pair"
+            },
+                        {
+              "key": "marketGroup",
+              "value": "",
+              "description": "market_group"
+            },
+                        {
+              "key": "linkedMarket",
+              "value": "",
+              "description": "linked_market"
+            },
+                        {
+              "key": "riskOrderbookA",
+              "value": "",
+              "description": "risk_orderbook_a"
+            },
+                        {
+              "key": "riskOrderbookB",
+              "value": "",
+              "description": "risk_orderbook_b"
+            },
+                        {
+              "key": "tickSize",
+              "value": "",
+              "description": "tick_size"
+            },
+                        {
+              "key": "qtyIncrement",
+              "value": "",
+              "description": "qty_increment"
+            },
+                        {
+              "key": "pricingSource",
+              "value": "",
+              "description": "pricing_source"
+            },
+                        {
+              "key": "upperPriceType",
+              "value": "",
+              "description": "upper_price_type"
+            },
+                        {
+              "key": "upperPriceBound",
+              "value": "",
+              "description": "upper_price_bound"
+            },
+                        {
+              "key": "lowerPriceType",
+              "value": "",
+              "description": "lower_price_type"
+            },
+                        {
+              "key": "lowerPriceBound",
+              "value": "",
+              "description": "lower_price_bound"
+            },
+                        {
+              "key": "priceBound",
+              "value": "",
+              "description": "price_bound"
+            },
+                        {
+              "key": "priceBoundType",
+              "value": "",
+              "description": "price_bound_type"
+            },
+                        {
+              "key": "maxLeverage",
+              "value": "",
+              "description": "max_leverage"
+            },
+                        {
+              "key": "status",
+              "value": "",
+              "description": "status"
+            },
+                        {
+              "key": "active",
+              "value": "",
+              "description": "active"
+            },
+                        {
+              "key": "listingDate",
+              "value": "",
+              "description": "listing_date"
+            },
+                        {
+              "key": "daysListing",
+              "value": "",
+              "description": "days_listing"
+            },
+                        {
+              "key": "endDate",
+              "value": "",
+              "description": "end_date"
+            },
+                        {
+              "key": "refInstrumentId",
+              "value": "",
+              "description": "ref_instrument_id"
+            },
+                        {
+              "key": "created",
+              "value": "",
+              "description": "created"
+            },
+                        {
+              "key": "creator",
+              "value": "",
+              "description": "creator"
+            },
+                        {
+              "key": "lastUpdated",
+              "value": "",
+              "description": "last_updated"
+            },
+                        {
+              "key": "lastUpdator",
+              "value": "",
+              "description": "last_updator"
+            },
+                        {
+              "key": "marketPrice",
+              "value": "",
+              "description": "market_price"
+            },
+                        {
+              "key": "tag",
+              "value": "",
+              "description": "tag"
+            },
+                        {
+              "key": "description",
+              "value": "",
+              "description": "description"
+            },
+                        {
+              "key": "delistingDate",
+              "value": "",
+              "description": "delisting_date"
+            },
+                        {
+              "key": "isDelisting",
+              "value": "",
+              "description": "is_delisting"
+            },
+                        {
+              "key": "zone",
+              "value": "",
+              "description": "zone"
+            },
+                        {
+              "key": "feeCode",
+              "value": "",
+              "description": "fee_code"
+            },
+                        {
+              "key": "exclusive",
+              "value": "",
+              "description": "exclusive"
+            },
+                        {
+              "key": "indexPrice",
+              "value": "",
+              "description": "index_price"
+            },
+                        {
+              "key": "makerFee",
+              "value": "",
+              "description": "maker_fee"
+            }
+            ,
+            {
+              "key": "pageNo",
+              "value": "1",
+              "description": "页码"
+            },
+            {
+              "key": "pageSize",
+              "value": "10",
+              "description": "分页大小"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+
+    {
+      "name": "插入market数据",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "fa019267-c3ae-4ad7-b088-b180fc93c085",
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"marketId\": \"\",\n    \"marketCode\": \"\",\n    \"name\": \"\",\n    \"marketType\": \"\",\n    \"spreadType\": \"\",\n    \"baseId\": \"\",\n    \"baseInst\": \"\",\n    \"counterId\": \"\",\n    \"counterInst\": \"\",\n    \"collateralType\": \"\",\n    \"cycleType\": \"\",\n    \"marginCurrency\": \"\",\n    \"contractValCurrency\": \"\",\n    \"referencePair\": \"\",\n    \"marketGroup\": \"\",\n    \"linkedMarket\": \"\",\n    \"riskOrderbookA\": \"\",\n    \"riskOrderbookB\": \"\",\n    \"tickSize\": \"\",\n    \"qtyIncrement\": \"\",\n    \"pricingSource\": \"\",\n    \"upperPriceType\": \"\",\n    \"upperPriceBound\": \"\",\n    \"lowerPriceType\": \"\",\n    \"lowerPriceBound\": \"\",\n    \"priceBound\": \"\",\n    \"priceBoundType\": \"\",\n    \"maxLeverage\": \"\",\n    \"status\": \"\",\n    \"active\": \"\",\n    \"listingDate\": \"\",\n    \"daysListing\": \"\",\n    \"endDate\": \"\",\n    \"refInstrumentId\": \"\",\n    \"created\": \"\",\n    \"creator\": \"\",\n    \"lastUpdated\": \"\",\n    \"lastUpdator\": \"\",\n    \"marketPrice\": \"\",\n    \"tag\": \"\",\n    \"description\": \"\",\n    \"delistingDate\": \"\",\n    \"isDelisting\": \"\",\n    \"zone\": \"\",\n    \"feeCode\": \"\",\n    \"exclusive\": \"\",\n    \"indexPrice\": \"\",\n    \"makerFee\": \"\"\n}",
+          "options": {
+              "raw": {
+                "language": "json"
+              }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}/market/insert",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "market",
+            "insert"
+          ]
+        }
+      },
+      "response": []
+    },
+
+    {
+      "name": "更新market数据",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "248a21fa-e900-4571-8baa-4473adefc529",
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+            "mode": "raw",
+            "raw": "{\n    \"id\": \"\",\n    \"marketId\": \"\",\n    \"marketCode\": \"\",\n    \"name\": \"\",\n    \"marketType\": \"\",\n    \"spreadType\": \"\",\n    \"baseId\": \"\",\n    \"baseInst\": \"\",\n    \"counterId\": \"\",\n    \"counterInst\": \"\",\n    \"collateralType\": \"\",\n    \"cycleType\": \"\",\n    \"marginCurrency\": \"\",\n    \"contractValCurrency\": \"\",\n    \"referencePair\": \"\",\n    \"marketGroup\": \"\",\n    \"linkedMarket\": \"\",\n    \"riskOrderbookA\": \"\",\n    \"riskOrderbookB\": \"\",\n    \"tickSize\": \"\",\n    \"qtyIncrement\": \"\",\n    \"pricingSource\": \"\",\n    \"upperPriceType\": \"\",\n    \"upperPriceBound\": \"\",\n    \"lowerPriceType\": \"\",\n    \"lowerPriceBound\": \"\",\n    \"priceBound\": \"\",\n    \"priceBoundType\": \"\",\n    \"maxLeverage\": \"\",\n    \"status\": \"\",\n    \"active\": \"\",\n    \"listingDate\": \"\",\n    \"daysListing\": \"\",\n    \"endDate\": \"\",\n    \"refInstrumentId\": \"\",\n    \"created\": \"\",\n    \"creator\": \"\",\n    \"lastUpdated\": \"\",\n    \"lastUpdator\": \"\",\n    \"marketPrice\": \"\",\n    \"tag\": \"\",\n    \"description\": \"\",\n    \"delistingDate\": \"\",\n    \"isDelisting\": \"\",\n    \"zone\": \"\",\n    \"feeCode\": \"\",\n    \"exclusive\": \"\",\n    \"indexPrice\": \"\",\n    \"makerFee\": \"\"\n}",
+            "options": {
+                "raw": {
+                "language": "json"
+                }
+            }
+        },
+        "url": {
+          "raw": "{{baseURL}}/market/update",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "market",
+            "update"
+          ]
+        }
+      },
+      "response": []
+    },
+
+    {
+      "name": "删除market数据",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "3846d68f-b014-4964-9cd1-d7584d2380ca",
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "id",
+              "value": "",
+              "description": "id"
+            }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+          ]
+        },
+        "url": {
+          "raw": "{{baseURL}}/market/delete",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "market",
+            "delete"
+          ]
+        }
+      },
+      "response": []
+    }
+
+  ],
+  "protocolProfileBehavior": {}
+}

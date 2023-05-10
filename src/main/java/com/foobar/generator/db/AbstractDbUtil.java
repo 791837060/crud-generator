@@ -55,7 +55,7 @@ public abstract class AbstractDbUtil {
     }
 
     /**
-     * 获取所有表名
+     * 获取所有表名无字段
      *
      * @param schemaName
      * @return

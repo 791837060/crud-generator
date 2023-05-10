@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.coinflex.api.mortgage.dao.MarketMapper">
+    <!--结果字段映射-->
+    <resultMap id="queryResultMap" type="com.coinflex.api.mortgage.domain.MarketDO">
+        <result column="id" property="id" jdbcType="BIGINT" />
+        <result column="market_id" property="marketId" jdbcType="BIGINT" />
+        <result column="market_code" property="marketCode" jdbcType="VARCHAR" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="market_type" property="marketType" jdbcType="VARCHAR" />
+        <result column="spread_type" property="spreadType" jdbcType="VARCHAR" />
+        <result column="base_id" property="baseId" jdbcType="BIGINT" />
+        <result column="base_inst" property="baseInst" jdbcType="VARCHAR" />
+        <result column="counter_id" property="counterId" jdbcType="BIGINT" />
+        <result column="counter_inst" property="counterInst" jdbcType="VARCHAR" />
+        <result column="collateral_type" property="collateralType" jdbcType="VARCHAR" />
+        <result column="cycle_type" property="cycleType" jdbcType="VARCHAR" />
+        <result column="margin_currency" property="marginCurrency" jdbcType="VARCHAR" />
+        <result column="contract_val_currency" property="contractValCurrency" jdbcType="VARCHAR" />
+        <result column="reference_pair" property="referencePair" jdbcType="VARCHAR" />
+        <result column="market_group" property="marketGroup" jdbcType="VARCHAR" />
+        <result column="linked_market" property="linkedMarket" jdbcType="VARCHAR" />
+        <result column="risk_orderbook_a" property="riskOrderbookA" jdbcType="VARCHAR" />
+        <result column="risk_orderbook_b" property="riskOrderbookB" jdbcType="VARCHAR" />
+        <result column="tick_size" property="tickSize" jdbcType="DECIMAL" />
+        <result column="qty_increment" property="qtyIncrement" jdbcType="DECIMAL" />
+        <result column="pricing_source" property="pricingSource" jdbcType="VARCHAR" />
+        <result column="upper_price_type" property="upperPriceType" jdbcType="VARCHAR" />
+        <result column="upper_price_bound" property="upperPriceBound" jdbcType="DECIMAL" />
+        <result column="lower_price_type" property="lowerPriceType" jdbcType="VARCHAR" />
+        <result column="lower_price_bound" property="lowerPriceBound" jdbcType="DECIMAL" />
+        <result column="price_bound" property="priceBound" jdbcType="DECIMAL" />
+        <result column="price_bound_type" property="priceBoundType" jdbcType="VARCHAR" />
+        <result column="max_leverage" property="maxLeverage" jdbcType="DECIMAL" />
+        <result column="status" property="status" jdbcType="VARCHAR" />
+        <result column="active" property="active" jdbcType="BOOLEAN" />
+        <result column="listing_date" property="listingDate" jdbcType="TIMESTAMP" />
+        <result column="days_listing" property="daysListing" jdbcType="INTEGER" />
+        <result column="end_date" property="endDate" jdbcType="TIMESTAMP" />
+        <result column="ref_instrument_id" property="refInstrumentId" jdbcType="BIGINT" />
+        <result column="created" property="created" jdbcType="TIMESTAMP" />
+        <result column="creator" property="creator" jdbcType="BIGINT" />
+        <result column="last_updated" property="lastUpdated" jdbcType="TIMESTAMP" />
+        <result column="last_updator" property="lastUpdator" jdbcType="BIGINT" />
+        <result column="market_price" property="marketPrice" jdbcType="DECIMAL" />
+        <result column="tag" property="tag" jdbcType="VARCHAR" />
+        <result column="description" property="description" jdbcType="VARCHAR" />
+        <result column="delisting_date" property="delistingDate" jdbcType="TIMESTAMP" />
+        <result column="is_delisting" property="isDelisting" jdbcType="BOOLEAN" />
+        <result column="zone" property="zone" jdbcType="INTEGER" />
+        <result column="fee_code" property="feeCode" jdbcType="VARCHAR" />
+        <result column="exclusive" property="exclusive" jdbcType="BOOLEAN" />
+        <result column="index_price" property="indexPrice" jdbcType="DECIMAL" />
+        <result column="maker_fee" property="makerFee" jdbcType="BIGINT" />
+    </resultMap>
+
+    <!--表名-->
+    <sql id="TABLE_NAME">market</sql>
+
+    <!--所有字段-->
+    <sql id="ALL_COLUMNS">
+            ${alias}.id,
+            ${alias}.market_id,
+            ${alias}.market_code,
+            ${alias}.name,
+            ${alias}.market_type,
+            ${alias}.spread_type,
+            ${alias}.base_id,
+            ${alias}.base_inst,
+            ${alias}.counter_id,
+            ${alias}.counter_inst,
+            ${alias}.collateral_type,
+            ${alias}.cycle_type,
+            ${alias}.margin_currency,
+            ${alias}.contract_val_currency,
+            ${alias}.reference_pair,
+            ${alias}.market_group,
+            ${alias}.linked_market,
+            ${alias}.risk_orderbook_a,
+            ${alias}.risk_orderbook_b,
+            ${alias}.tick_size,
+            ${alias}.qty_increment,
+            ${alias}.pricing_source,
+            ${alias}.upper_price_type,
+            ${alias}.upper_price_bound,
+            ${alias}.lower_price_type,
+            ${alias}.lower_price_bound,
+            ${alias}.price_bound,
+            ${alias}.price_bound_type,
+            ${alias}.max_leverage,
+            ${alias}.status,
+            ${alias}.active,
+            ${alias}.listing_date,
+            ${alias}.days_listing,
+            ${alias}.end_date,
+            ${alias}.ref_instrument_id,
+            ${alias}.created,
+            ${alias}.creator,
+            ${alias}.last_updated,
+            ${alias}.last_updator,
+            ${alias}.market_price,
+            ${alias}.tag,
+            ${alias}.description,
+            ${alias}.delisting_date,
+            ${alias}.is_delisting,
+            ${alias}.zone,
+            ${alias}.fee_code,
+            ${alias}.exclusive,
+            ${alias}.index_price,
+            ${alias}.maker_fee
+    </sql>
+
+    <!--各种查询条件-->
+    <sql id="QUERY_CONDITIONS">
+        <if test="id != null">
+            and ${alias}.id = #{id, jdbcType=BIGINT}
+        </if>
+
+        <if test="marketId != null">
+            and ${alias}.market_id = #{marketId, jdbcType=BIGINT}
+        </if>
+
+        <if test="marketCode != null and marketCode != ''">
+            and ${alias}.market_code = #{marketCode, jdbcType=VARCHAR}
+        </if>
+
+        <if test="name != null and name != ''">
+            and ${alias}.name = #{name, jdbcType=VARCHAR}
+        </if>
+
+        <if test="marketType != null and marketType != ''">
+            and ${alias}.market_type = #{marketType, jdbcType=VARCHAR}
+        </if>
+
+        <if test="spreadType != null and spreadType != ''">
+            and ${alias}.spread_type = #{spreadType, jdbcType=VARCHAR}
+        </if>
+
+        <if test="baseId != null">
+            and ${alias}.base_id = #{baseId, jdbcType=BIGINT}
+        </if>
+
+        <if test="baseInst != null and baseInst != ''">
+            and ${alias}.base_inst = #{baseInst, jdbcType=VARCHAR}
+        </if>
+
+        <if test="counterId != null">
+            and ${alias}.counter_id = #{counterId, jdbcType=BIGINT}
+        </if>
+
+        <if test="counterInst != null and counterInst != ''">
+            and ${alias}.counter_inst = #{counterInst, jdbcType=VARCHAR}
+        </if>
+
+        <if test="collateralType != null and collateralType != ''">
+            and ${alias}.collateral_type = #{collateralType, jdbcType=VARCHAR}
+        </if>
+
+        <if test="cycleType != null and cycleType != ''">
+            and ${alias}.cycle_type = #{cycleType, jdbcType=VARCHAR}
+        </if>
+
+        <if test="marginCurrency != null and marginCurrency != ''">
+            and ${alias}.margin_currency = #{marginCurrency, jdbcType=VARCHAR}
+        </if>
+
+        <if test="contractValCurrency != null and contractValCurrency != ''">
+            and ${alias}.contract_val_currency = #{contractValCurrency, jdbcType=VARCHAR}
+        </if>
+
+        <if test="referencePair != null and referencePair != ''">
+            and ${alias}.reference_pair = #{referencePair, jdbcType=VARCHAR}
+        </if>
+
+        <if test="marketGroup != null and marketGroup != ''">
+            and ${alias}.market_group = #{marketGroup, jdbcType=VARCHAR}
+        </if>
+
+        <if test="linkedMarket != null and linkedMarket != ''">
+            and ${alias}.linked_market = #{linkedMarket, jdbcType=VARCHAR}
+        </if>
+
+        <if test="riskOrderbookA != null and riskOrderbookA != ''">
+            and ${alias}.risk_orderbook_a = #{riskOrderbookA, jdbcType=VARCHAR}
+        </if>
+
+        <if test="riskOrderbookB != null and riskOrderbookB != ''">
+            and ${alias}.risk_orderbook_b = #{riskOrderbookB, jdbcType=VARCHAR}
+        </if>
+
+        <if test="tickSize != null">
+            and ${alias}.tick_size = #{tickSize, jdbcType=DECIMAL}
+        </if>
+
+        <if test="qtyIncrement != null">
+            and ${alias}.qty_increment = #{qtyIncrement, jdbcType=DECIMAL}
+        </if>
+
+        <if test="pricingSource != null and pricingSource != ''">
+            and ${alias}.pricing_source = #{pricingSource, jdbcType=VARCHAR}
+        </if>
+
+        <if test="upperPriceType != null and upperPriceType != ''">
+            and ${alias}.upper_price_type = #{upperPriceType, jdbcType=VARCHAR}
+        </if>
+
+        <if test="upperPriceBound != null">
+            and ${alias}.upper_price_bound = #{upperPriceBound, jdbcType=DECIMAL}
+        </if>
+
+        <if test="lowerPriceType != null and lowerPriceType != ''">
+            and ${alias}.lower_price_type = #{lowerPriceType, jdbcType=VARCHAR}
+        </if>
+
+        <if test="lowerPriceBound != null">
+            and ${alias}.lower_price_bound = #{lowerPriceBound, jdbcType=DECIMAL}
+        </if>
+
+        <if test="priceBound != null">
+            and ${alias}.price_bound = #{priceBound, jdbcType=DECIMAL}
+        </if>
+
+        <if test="priceBoundType != null and priceBoundType != ''">
+            and ${alias}.price_bound_type = #{priceBoundType, jdbcType=VARCHAR}
+        </if>
+
+        <if test="maxLeverage != null">
+            and ${alias}.max_leverage = #{maxLeverage, jdbcType=DECIMAL}
+        </if>
+
+        <if test="status != null and status != ''">
+            and ${alias}.status = #{status, jdbcType=VARCHAR}
+        </if>
+
+        <if test="active != null">
+            and ${alias}.active = #{active, jdbcType=BOOLEAN}
+        </if>
+
+        <if test="listingDate != null">
+            and ${alias}.listing_date = #{listingDate, jdbcType=TIMESTAMP}
+        </if>
+
+        <if test="daysListing != null">
+            and ${alias}.days_listing = #{daysListing, jdbcType=INTEGER}
+        </if>
+
+        <if test="endDate != null">
+            and ${alias}.end_date = #{endDate, jdbcType=TIMESTAMP}
+        </if>
+
+        <if test="refInstrumentId != null">
+            and ${alias}.ref_instrument_id = #{refInstrumentId, jdbcType=BIGINT}
+        </if>
+
+        <if test="created != null">
+            and ${alias}.created = #{created, jdbcType=TIMESTAMP}
+        </if>
+
+        <if test="creator != null">
+            and ${alias}.creator = #{creator, jdbcType=BIGINT}
+        </if>
+
+        <if test="lastUpdated != null">
+            and ${alias}.last_updated = #{lastUpdated, jdbcType=TIMESTAMP}
+        </if>
+
+        <if test="lastUpdator != null">
+            and ${alias}.last_updator = #{lastUpdator, jdbcType=BIGINT}
+        </if>
+
+        <if test="marketPrice != null">
+            and ${alias}.market_price = #{marketPrice, jdbcType=DECIMAL}
+        </if>
+
+        <if test="tag != null">
+            and ${alias}.tag = #{tag, jdbcType=VARCHAR}
+        </if>
+
+        <if test="description != null and description != ''">
+            and ${alias}.description = #{description, jdbcType=VARCHAR}
+        </if>
+
+        <if test="delistingDate != null">
+            and ${alias}.delisting_date = #{delistingDate, jdbcType=TIMESTAMP}
+        </if>
+
+        <if test="isDelisting != null">
+            and ${alias}.is_delisting = #{isDelisting, jdbcType=BOOLEAN}
+        </if>
+
+        <if test="zone != null">
+            and ${alias}.zone = #{zone, jdbcType=INTEGER}
+        </if>
+
+        <if test="feeCode != null and feeCode != ''">
+            and ${alias}.fee_code = #{feeCode, jdbcType=VARCHAR}
+        </if>
+
+        <if test="exclusive != null">
+            and ${alias}.exclusive = #{exclusive, jdbcType=BOOLEAN}
+        </if>
+
+        <if test="indexPrice != null">
+            and ${alias}.index_price = #{indexPrice, jdbcType=DECIMAL}
+        </if>
+
+        <if test="makerFee != null">
+            and ${alias}.maker_fee = #{makerFee, jdbcType=BIGINT}
+        </if>
+
+    </sql>
+
+    <!--主键条件-->
+    <sql id="PK_CONDITION">where id = #{id, jdbcType=BIGINT}</sql>
+
+    <!--查询-->
+    <select id="getRecordList" parameterType="map" resultMap="queryResultMap">
+        select <include refid="ALL_COLUMNS"><property name="alias" value="a"/></include>
+        from <include refid="TABLE_NAME"/> a
+        <where>
+            <include refid="QUERY_CONDITIONS"><property name="alias" value="a"/></include>
+        </where>
+        order by a.<choose><when test="orderBy != null and orderBy != ''">${orderBy}</when><otherwise>id</otherwise></choose> <choose><when test="orderDirection != null and orderDirection != ''">${orderDirection}</when><otherwise>desc</otherwise></choose>
+    </select>
+
+    <!--根据主键查询-->
+    <select id="getRecordById" resultMap="queryResultMap">
+        select <include refid="ALL_COLUMNS"><property name="alias" value="a"/></include>
+        from <include refid="TABLE_NAME"/> a
+        <include refid="PK_CONDITION"/>
+    </select>
+
+    <!--查询数量-->
+    <select id="getRecordCount" parameterType="map" resultType="java.lang.Long">
+        select count(*) from <include refid="TABLE_NAME"/> a
+        <where>
+            <include refid="QUERY_CONDITIONS"><property name="alias" value="a"/></include>
+        </where>
+    </select>
+
+    <!--插入-->
+    <insert id="insert" parameterType="com.coinflex.api.mortgage.domain.MarketDO" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+        
+        insert into <include refid="TABLE_NAME"/> (
+            id,
+            market_id,
+            market_code,
+            name,
+            market_type,
+            spread_type,
+            base_id,
+            base_inst,
+            counter_id,
+            counter_inst,
+            collateral_type,
+            cycle_type,
+            margin_currency,
+            contract_val_currency,
+            reference_pair,
+            market_group,
+            linked_market,
+            risk_orderbook_a,
+            risk_orderbook_b,
+            tick_size,
+            qty_increment,
+            pricing_source,
+            upper_price_type,
+            upper_price_bound,
+            lower_price_type,
+            lower_price_bound,
+            price_bound,
+            price_bound_type,
+            max_leverage,
+            status,
+            active,
+            listing_date,
+            days_listing,
+            end_date,
+            ref_instrument_id,
+            created,
+            creator,
+            last_updated,
+            last_updator,
+            market_price,
+            tag,
+            description,
+            delisting_date,
+            is_delisting,
+            zone,
+            fee_code,
+            exclusive,
+            index_price,
+            maker_fee
+        )
+        values (
+            #{id, jdbcType=BIGINT},
+            #{marketId, jdbcType=BIGINT},
+            #{marketCode, jdbcType=VARCHAR},
+            #{name, jdbcType=VARCHAR},
+            #{marketType, jdbcType=VARCHAR},
+            #{spreadType, jdbcType=VARCHAR},
+            #{baseId, jdbcType=BIGINT},
+            #{baseInst, jdbcType=VARCHAR},
+            #{counterId, jdbcType=BIGINT},
+            #{counterInst, jdbcType=VARCHAR},
+            #{collateralType, jdbcType=VARCHAR},
+            #{cycleType, jdbcType=VARCHAR},
+            #{marginCurrency, jdbcType=VARCHAR},
+            #{contractValCurrency, jdbcType=VARCHAR},
+            #{referencePair, jdbcType=VARCHAR},
+            #{marketGroup, jdbcType=VARCHAR},
+            #{linkedMarket, jdbcType=VARCHAR},
+            #{riskOrderbookA, jdbcType=VARCHAR},
+            #{riskOrderbookB, jdbcType=VARCHAR},
+            #{tickSize, jdbcType=DECIMAL},
+            #{qtyIncrement, jdbcType=DECIMAL},
+            #{pricingSource, jdbcType=VARCHAR},
+            #{upperPriceType, jdbcType=VARCHAR},
+            #{upperPriceBound, jdbcType=DECIMAL},
+            #{lowerPriceType, jdbcType=VARCHAR},
+            #{lowerPriceBound, jdbcType=DECIMAL},
+            #{priceBound, jdbcType=DECIMAL},
+            #{priceBoundType, jdbcType=VARCHAR},
+            #{maxLeverage, jdbcType=DECIMAL},
+            #{status, jdbcType=VARCHAR},
+            #{active, jdbcType=BOOLEAN},
+            #{listingDate, jdbcType=TIMESTAMP},
+            #{daysListing, jdbcType=INTEGER},
+            #{endDate, jdbcType=TIMESTAMP},
+            #{refInstrumentId, jdbcType=BIGINT},
+            #{created, jdbcType=TIMESTAMP},
+            #{creator, jdbcType=BIGINT},
+            #{lastUpdated, jdbcType=TIMESTAMP},
+            #{lastUpdator, jdbcType=BIGINT},
+            #{marketPrice, jdbcType=DECIMAL},
+            #{tag, jdbcType=VARCHAR},
+            #{description, jdbcType=VARCHAR},
+            #{delistingDate, jdbcType=TIMESTAMP},
+            #{isDelisting, jdbcType=BOOLEAN},
+            #{zone, jdbcType=INTEGER},
+            #{feeCode, jdbcType=VARCHAR},
+            #{exclusive, jdbcType=BOOLEAN},
+            #{indexPrice, jdbcType=DECIMAL},
+            #{makerFee, jdbcType=BIGINT}
+        )
+    </insert>
+
+    <!--更新-->
+    <update id="update" parameterType="com.coinflex.api.mortgage.domain.MarketDO">
+        update <include refid="TABLE_NAME"/>
+        <set>
+            <if test="marketId != null">market_id = #{marketId, jdbcType=BIGINT},</if>
+            <if test="marketCode != null and marketCode != ''">market_code = #{marketCode, jdbcType=VARCHAR},</if>
+            <if test="name != null and name != ''">name = #{name, jdbcType=VARCHAR},</if>
+            <if test="marketType != null and marketType != ''">market_type = #{marketType, jdbcType=VARCHAR},</if>
+            <if test="spreadType != null and spreadType != ''">spread_type = #{spreadType, jdbcType=VARCHAR},</if>
+            <if test="baseId != null">base_id = #{baseId, jdbcType=BIGINT},</if>
+            <if test="baseInst != null and baseInst != ''">base_inst = #{baseInst, jdbcType=VARCHAR},</if>
+            <if test="counterId != null">counter_id = #{counterId, jdbcType=BIGINT},</if>
+            <if test="counterInst != null and counterInst != ''">counter_inst = #{counterInst, jdbcType=VARCHAR},</if>
+            <if test="collateralType != null and collateralType != ''">collateral_type = #{collateralType, jdbcType=VARCHAR},</if>
+            <if test="cycleType != null and cycleType != ''">cycle_type = #{cycleType, jdbcType=VARCHAR},</if>
+            <if test="marginCurrency != null and marginCurrency != ''">margin_currency = #{marginCurrency, jdbcType=VARCHAR},</if>
+            <if test="contractValCurrency != null and contractValCurrency != ''">contract_val_currency = #{contractValCurrency, jdbcType=VARCHAR},</if>
+            <if test="referencePair != null and referencePair != ''">reference_pair = #{referencePair, jdbcType=VARCHAR},</if>
+            <if test="marketGroup != null and marketGroup != ''">market_group = #{marketGroup, jdbcType=VARCHAR},</if>
+            <if test="linkedMarket != null and linkedMarket != ''">linked_market = #{linkedMarket, jdbcType=VARCHAR},</if>
+            <if test="riskOrderbookA != null and riskOrderbookA != ''">risk_orderbook_a = #{riskOrderbookA, jdbcType=VARCHAR},</if>
+            <if test="riskOrderbookB != null and riskOrderbookB != ''">risk_orderbook_b = #{riskOrderbookB, jdbcType=VARCHAR},</if>
+            <if test="tickSize != null">tick_size = #{tickSize, jdbcType=DECIMAL},</if>
+            <if test="qtyIncrement != null">qty_increment = #{qtyIncrement, jdbcType=DECIMAL},</if>
+            <if test="pricingSource != null and pricingSource != ''">pricing_source = #{pricingSource, jdbcType=VARCHAR},</if>
+            <if test="upperPriceType != null and upperPriceType != ''">upper_price_type = #{upperPriceType, jdbcType=VARCHAR},</if>
+            <if test="upperPriceBound != null">upper_price_bound = #{upperPriceBound, jdbcType=DECIMAL},</if>
+            <if test="lowerPriceType != null and lowerPriceType != ''">lower_price_type = #{lowerPriceType, jdbcType=VARCHAR},</if>
+            <if test="lowerPriceBound != null">lower_price_bound = #{lowerPriceBound, jdbcType=DECIMAL},</if>
+            <if test="priceBound != null">price_bound = #{priceBound, jdbcType=DECIMAL},</if>
+            <if test="priceBoundType != null and priceBoundType != ''">price_bound_type = #{priceBoundType, jdbcType=VARCHAR},</if>
+            <if test="maxLeverage != null">max_leverage = #{maxLeverage, jdbcType=DECIMAL},</if>
+            <if test="status != null and status != ''">status = #{status, jdbcType=VARCHAR},</if>
+            <if test="active != null">active = #{active, jdbcType=BOOLEAN},</if>
+            <if test="listingDate != null">listing_date = #{listingDate, jdbcType=TIMESTAMP},</if>
+            <if test="daysListing != null">days_listing = #{daysListing, jdbcType=INTEGER},</if>
+            <if test="endDate != null">end_date = #{endDate, jdbcType=TIMESTAMP},</if>
+            <if test="refInstrumentId != null">ref_instrument_id = #{refInstrumentId, jdbcType=BIGINT},</if>
+            <if test="created != null">created = #{created, jdbcType=TIMESTAMP},</if>
+            <if test="creator != null">creator = #{creator, jdbcType=BIGINT},</if>
+            <if test="lastUpdated != null">last_updated = #{lastUpdated, jdbcType=TIMESTAMP},</if>
+            <if test="lastUpdator != null">last_updator = #{lastUpdator, jdbcType=BIGINT},</if>
+            <if test="marketPrice != null">market_price = #{marketPrice, jdbcType=DECIMAL},</if>
+            <if test="tag != null">tag = #{tag, jdbcType=VARCHAR},</if>
+            <if test="description != null and description != ''">description = #{description, jdbcType=VARCHAR},</if>
+            <if test="delistingDate != null">delisting_date = #{delistingDate, jdbcType=TIMESTAMP},</if>
+            <if test="isDelisting != null">is_delisting = #{isDelisting, jdbcType=BOOLEAN},</if>
+            <if test="zone != null">zone = #{zone, jdbcType=INTEGER},</if>
+            <if test="feeCode != null and feeCode != ''">fee_code = #{feeCode, jdbcType=VARCHAR},</if>
+            <if test="exclusive != null">exclusive = #{exclusive, jdbcType=BOOLEAN},</if>
+            <if test="indexPrice != null">index_price = #{indexPrice, jdbcType=DECIMAL},</if>
+            <if test="makerFee != null">maker_fee = #{makerFee, jdbcType=BIGINT},</if>
+        </set>
+        <include refid="PK_CONDITION"/>
+    </update>
+
+    <!--删除-->
+    <delete id="delete">
+        delete from <include refid="TABLE_NAME"/> <include refid="PK_CONDITION"/>
+    </delete>
+</mapper>

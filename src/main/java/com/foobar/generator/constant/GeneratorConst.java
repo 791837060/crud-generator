@@ -29,6 +29,7 @@ public final class GeneratorConst {
         javaBoxTypeMap.put("bigint", "Long");
         javaBoxTypeMap.put("binary", "Byte[]");
         javaBoxTypeMap.put("bit", "Boolean");
+        javaBoxTypeMap.put("bool", "Boolean");
         javaBoxTypeMap.put("blob", "Byte[]");
         javaBoxTypeMap.put("mediumblob", "Byte[]");
         javaBoxTypeMap.put("longblob", "Byte[]");
@@ -39,6 +40,7 @@ public final class GeneratorConst {
         javaBoxTypeMap.put("double", "Double");
         javaBoxTypeMap.put("float", "Float");
         javaBoxTypeMap.put("int", "Integer");
+        javaBoxTypeMap.put("int2", "Integer");
         javaBoxTypeMap.put("int4", "Integer");
         javaBoxTypeMap.put("int8", "Long");
         javaBoxTypeMap.put("image", "Byte[]");
@@ -54,6 +56,7 @@ public final class GeneratorConst {
         javaBoxTypeMap.put("smallmoney", "BigDecimal");
         javaBoxTypeMap.put("sql_variant", "String");
         javaBoxTypeMap.put("text", "String");
+        javaBoxTypeMap.put("jsonb", "String");
         javaBoxTypeMap.put("tinyint", "Integer");
         javaBoxTypeMap.put("uniqueidentifier", "String");
         javaBoxTypeMap.put("varbinary", "Byte[]");
@@ -66,6 +69,7 @@ public final class GeneratorConst {
         mybatisTypeMap.put("bigint", "BIGINT");
         mybatisTypeMap.put("binary", "BLOB");
         mybatisTypeMap.put("bit", "BOOLEAN");
+        mybatisTypeMap.put("bool", "BOOLEAN");
         mybatisTypeMap.put("blob", "BLOB");
         mybatisTypeMap.put("mediumblob", "BLOB");
         mybatisTypeMap.put("longblob", "BLOB");
@@ -76,6 +80,7 @@ public final class GeneratorConst {
         mybatisTypeMap.put("double", "DOUBLE");
         mybatisTypeMap.put("float", "FLOAT");
         mybatisTypeMap.put("int", "INTEGER");
+        mybatisTypeMap.put("int2", "INTEGER");
         mybatisTypeMap.put("int4", "INTEGER");
         mybatisTypeMap.put("int8", "BIGINT");
         mybatisTypeMap.put("image", "BLOB");
@@ -91,6 +96,7 @@ public final class GeneratorConst {
         mybatisTypeMap.put("smallmoney", "DECIMAL");
         mybatisTypeMap.put("sql_variant", "VARCHAR");
         mybatisTypeMap.put("text", "VARCHAR");
+        mybatisTypeMap.put("jsonb", "VARCHAR");
         mybatisTypeMap.put("tinyint", "TINYINT");
         mybatisTypeMap.put("uniqueidentifier", "VARCHAR");
         mybatisTypeMap.put("varbinary", "BLOB");
