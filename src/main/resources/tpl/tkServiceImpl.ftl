@@ -90,7 +90,7 @@ public class ${table.javaClassName}ServiceImpl implements I${table.javaClassName
      */
     @Override
     public <#if resultClassName??>${resultClassName}<</#if>${table.javaClassName}DTO<#if resultClassName??>></#if> getRecord(${pk.columnJavaType} ${pk.columnCamelNameLower}) {
-        Preconditions.checkArgument(<#if pk.isChar == 1>StringUtils.isNotBlank(${pk.columnCamelNameLower})<#else>${pk.columnCamelNameLower} != null</#if>, "${pk.columnCamelNameLower}为空!");
+        Preconditions.checkArgument(<#if pk.isChar == 1>StringUtils.isNotBlank(${pk.columnCamelNameLower})<#else>${pk.columnCamelNameLower} != null</#if>, "${pk.columnCamelNameLower} is empty!");
         ${table.javaClassName}DO cond = new ${table.javaClassName}DO();
         cond.set${pk.columnCamelNameUpper}(${pk.columnCamelNameLower});
         ${table.javaClassName}DO obj = ${table.javaClassNameLower}Mapper.selectByPrimaryKey(cond);
@@ -110,16 +110,16 @@ public class ${table.javaClassName}ServiceImpl implements I${table.javaClassName
     @Override
     @Transactional(rollbackFor = Exception.class)
     public <#if resultClassName??>${resultClassName}<</#if>Boolean<#if resultClassName??>></#if> insert(${table.javaClassName}DTO record) {
-        Preconditions.checkArgument(record != null, "待插入的数据为空"); <#if versionColumn??>
+        Preconditions.checkArgument(record != null, "The data to be inserted is empty"); <#if versionColumn??>
         record.set${versionColumn.columnCamelNameUpper}(1L);</#if>
         ${table.javaClassName}DO domain = ${table.javaClassName}Converter.dtoToDomain(record);
         checkInsertObject(domain);
         int inserted = ${table.javaClassNameLower}Mapper.insertSelective(domain);
         if (inserted != 0) {
-            logger.info("${table.name}数据插入成功!");
+            logger.info("${table.name} data inserted successfully!");
             return <#if resultClassName??>new ${resultClassName}(</#if>true<#if resultClassName??>)</#if>;
         } else {
-            logger.error("${table.name}数据插入失败!");
+            logger.error("${table.name} data insertion failed!");
             return <#if resultClassName??>new ${resultClassName}(</#if>false<#if resultClassName??>)</#if>;
         }
     }
@@ -133,7 +133,7 @@ public class ${table.javaClassName}ServiceImpl implements I${table.javaClassName
      @Override
      @Transactional(rollbackFor = Exception.class)
      public <#if resultClassName??>${resultClassName}<</#if>Boolean<#if resultClassName??>></#if> insertAll(List<${table.javaClassName}DTO> recordList) {
-         Preconditions.checkArgument(!CollectionUtils.isEmpty(recordList), "待插入的数据为空");
+         Preconditions.checkArgument(!CollectionUtils.isEmpty(recordList), "The data to be inserted is empty");
          int success = 0;
          //说明: 因为Oracle不允许超过1000个参数，所以此处逐条插入
          for (${table.javaClassName}DTO record : recordList) {
@@ -145,11 +145,11 @@ public class ${table.javaClassName}ServiceImpl implements I${table.javaClassName
              ${table.javaClassName}DO domain = ${table.javaClassName}Converter.dtoToDomain(record);
              checkInsertObject(domain);
              if (${table.javaClassNameLower}Mapper.insertSelective(domain) == 0) {
-                 throw new RuntimeException("插入${table.comments}数据失败!");
+                 throw new RuntimeException("Failed to insert ${table.comments} data!");
              }
              success++;
          }
-         logger.info("本次总共插入{}条${table.name}数据", success);
+         logger.info("A total of {} pieces of ${table.name} data are inserted this time", success);
          return <#if resultClassName??>new ${resultClassName}(</#if>success > 0<#if resultClassName??>)</#if>;
     }
 
@@ -162,15 +162,15 @@ public class ${table.javaClassName}ServiceImpl implements I${table.javaClassName
     @Override
     @Transactional(rollbackFor = Exception.class)
     public <#if resultClassName??>${resultClassName}<</#if>Boolean<#if resultClassName??>></#if> update(${table.javaClassName}DTO record) {
-        Preconditions.checkArgument(record != null, "待更新的数据为空");
-        <#if pk??>Preconditions.checkArgument(record.get${pk.columnCamelNameUpper}() != null, "待更新的数据${pk.columnCamelNameLower}为空");</#if>
+        Preconditions.checkArgument(record != null, "The data to be updated is empty");
+        <#if pk??>Preconditions.checkArgument(record.get${pk.columnCamelNameUpper}() != null, "The data to be updated ${pk.columnCamelNameLower} is empty");</#if>
         ${table.javaClassName}DO cond = ${table.javaClassName}Converter.dtoToDomain(record);
         int updated = ${table.javaClassNameLower}Mapper.updateByPrimaryKeySelective(cond);
         if (updated != 0) {
-            logger.info("${table.name}数据更新成功! ${pk.columnCamelNameLower}={}", record.get${pk.columnCamelNameUpper}());
+            logger.info("${table.name} data updated successfully! ${pk.columnCamelNameLower}={}", record.get${pk.columnCamelNameUpper}());
             return <#if resultClassName??>new ${resultClassName}(</#if>true<#if resultClassName??>)</#if>;
         } else {
-            logger.error("${table.name}数据更新失败! ${pk.columnCamelNameLower}={}", record.get${pk.columnCamelNameUpper}());
+            logger.error("${table.name} data update failed! ${pk.columnCamelNameLower}={}", record.get${pk.columnCamelNameUpper}());
             return <#if resultClassName??>new ${resultClassName}(</#if>false<#if resultClassName??>)</#if>;
         }
     }
@@ -185,17 +185,17 @@ public class ${table.javaClassName}ServiceImpl implements I${table.javaClassName
     @Override
     @Transactional(rollbackFor = Exception.class)
     public <#if resultClassName??>${resultClassName}<</#if>Boolean<#if resultClassName??>></#if> delete(${pk.columnJavaType} ${pk.columnCamelNameLower}) {
-        Preconditions.checkArgument(<#if pk.isChar == 1>StringUtils.isNotBlank(${pk.columnCamelNameLower})<#else>${pk.columnCamelNameLower} != null</#if>, "${pk.columnCamelNameLower}为空!");
+        Preconditions.checkArgument(<#if pk.isChar == 1>StringUtils.isNotBlank(${pk.columnCamelNameLower})<#else>${pk.columnCamelNameLower} != null</#if>, "${pk.columnCamelNameLower} is empty!");
         ${table.javaClassName}DO cond = new ${table.javaClassName}DO();
         cond.set${pk.columnCamelNameUpper}(${pk.columnCamelNameLower});
 <#if logicDeleteColumn??>        cond.set${logicDeleteColumn.columnCamelNameUpper}(<#if logicDeleteColumn.isNumber == 1>1<#else>"1"</#if>);
         int rowCount = ${table.javaClassNameLower}Mapper.updateByPrimaryKeySelective(cond);<#else>
         int rowCount = ${table.javaClassNameLower}Mapper.deleteByPrimaryKey(cond);</#if>
         if (rowCount != 0) {
-            logger.info("${table.name}数据<#if logicDeleteColumn??>逻辑</#if>删除成功! ${pk.columnCamelNameLower}={}", ${pk.columnCamelNameLower});
+            logger.info("${table.name} data <#if logicDeleteColumn??>logic</#if> deleted successfully! ${pk.columnCamelNameLower}={}", ${pk.columnCamelNameLower});
             return <#if resultClassName??>new ${resultClassName}(</#if>true<#if resultClassName??>)</#if>;
         } else {
-            logger.error("${table.name}数据<#if logicDeleteColumn??>逻辑</#if>删除失败! ${pk.columnCamelNameLower}={}", ${pk.columnCamelNameLower});
+            logger.error("${table.name} data <#if logicDeleteColumn??>logic</#if> delete failed! ${pk.columnCamelNameLower}={}", ${pk.columnCamelNameLower});
             return <#if resultClassName??>new ${resultClassName}(</#if>false<#if resultClassName??>)</#if>;
         }
     }
@@ -209,7 +209,7 @@ public class ${table.javaClassName}ServiceImpl implements I${table.javaClassName
     @Override
     @Transactional(rollbackFor = Exception.class)
     public <#if resultClassName??>${resultClassName}<</#if>Boolean<#if resultClassName??>></#if> deleteAll(List<${pk.columnJavaType}> ${pk.columnCamelNameLower}List) {
-        Preconditions.checkArgument(!CollectionUtils.isEmpty(${pk.columnCamelNameLower}List), "待删除的${table.comments}数据${pk.columnComment}列表为空");
+        Preconditions.checkArgument(!CollectionUtils.isEmpty(${pk.columnCamelNameLower}List), "The list of ${table.comments} data ${pk.columnComment} to be deleted is empty");
         int success = 0;
         ${table.javaClassName}DO cond = new ${table.javaClassName}DO();
         for (${pk.columnJavaType} ${pk.columnCamelNameLower} : ${pk.columnCamelNameLower}List) {
@@ -221,12 +221,12 @@ public class ${table.javaClassName}ServiceImpl implements I${table.javaClassName
             int rowCount = ${table.javaClassNameLower}Mapper.updateByPrimaryKeySelective(cond);<#else>
             int rowCount = ${table.javaClassNameLower}Mapper.deleteByPrimaryKey(cond);</#if>
             if (rowCount == 0) {
-                logger.error("<#if logicDeleteColumn??>逻辑</#if>删除${table.name}数据失败! ${pk.columnCamelNameLower}={}", ${pk.columnCamelNameLower});
-                throw new RuntimeException("删除${table.comments}数据失败!");
+                logger.error("<#if logicDeleteColumn??>logic</#if> failed to delete ${table.name} data! ${pk.columnCamelNameLower}={}", ${pk.columnCamelNameLower});
+                throw new RuntimeException("Failed to delete ${table.comments} data!");
             }
             success++;
         }
-        logger.info("本次总共<#if logicDeleteColumn??>逻辑</#if>删除{}条${table.name}表数据! ${pk.columnCamelNameLower}List={}", success, ${pk.columnCamelNameLower}List);
+        logger.info("A total of <#if logicDeleteColumn??>logic</#if> deleted {} ${table.name} table data this time! ${pk.columnCamelNameLower}List={}", success, ${pk.columnCamelNameLower}List);
         return <#if resultClassName??>new ${resultClassName}(</#if>success > 0<#if resultClassName??>)</#if>;
     }</#if>
 

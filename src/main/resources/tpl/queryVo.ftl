@@ -17,36 +17,36 @@ import ${basePkgName}.vo.${table.javaClassName}VO;
  *
  * @author ${table.author!''}
  */<#if useSwagger == 1>
-@ApiModel(value = "${table.comments}查询条件", description = "${table.comments}查询条件")</#if>
+@ApiModel(value = "${table.comments} query condition", description = "${table.comments} query condition")</#if>
 public class ${table.javaClassName}QueryVO extends ${table.javaClassName}VO {
 <#include "./public/serialVersionUID.ftl"/>
 
 <#if useSwagger == 1>
-    @ApiModelProperty(value = "页码", dataType = "Integer", example = "1")</#if>
-    @NotNull(message = "页码为空", groups = {Default.class})
-    @Min(value = 1, message = "页码必须大于或等于{value}", groups = {Default.class})
-    @Max(value = 2147483646, message = "页码不能大于{value}", groups = {Default.class})
+    @ApiModelProperty(value = "page number", dataType = "Integer", example = "1")</#if>
+    @NotNull(message = "page number is empty", groups = {Default.class})
+    @Min(value = 1, message = "Page number must be greater than or equal to {value}", groups = {Default.class})
+    @Max(value = 2147483646, message = "Page number cannot be greater than {value}", groups = {Default.class})
     private Integer pageNo = 1;
 
 <#if useSwagger == 1>
-    @ApiModelProperty(value = "分页大小", dataType = "Integer", example = "10")</#if>
-    @NotNull(message = "分页大小为空", groups = {Default.class})
-    @Min(value = 1, message = "分页大小必须大于或等于{value}", groups = {Default.class})
-    @Max(value = 2147483646, message = "分页大小不能大于{value}", groups = {Default.class})
+    @ApiModelProperty(value = "Paging Size", dataType = "Integer", example = "10")</#if>
+    @NotNull(message = "page size is empty", groups = {Default.class})
+    @Min(value = 1, message = "Paging size must be greater than or equal to {value}", groups = {Default.class})
+    @Max(value = 2147483646, message = "Paging size cannot be greater than {value}", groups = {Default.class})
     private Integer pageSize = ${table.pageSize};
 
 <#if useSwagger == 1>
-    @ApiModelProperty(value = "排序字段名", dataType = "String")</#if>
-    @Pattern(regexp = "^[a-zA-Z][a-zA-Z0-9_]*$", message = "排序字段名无效", groups = {Default.class})
+    @ApiModelProperty(value = "sort field name", dataType = "String")</#if>
+    @Pattern(regexp = "^[a-zA-Z][a-zA-Z0-9_]*$", message = "Invalid sort field name", groups = {Default.class})
     private String orderBy;
 
 <#if useSwagger == 1>
-    @ApiModelProperty(value = "排序方向: asc或desc", dataType = "String", example = "desc")</#if>
-    @Pattern(regexp = "(?i)asc|desc", message = "排序方向必须是asc或desc", groups = {Default.class})
+    @ApiModelProperty(value = "Sort direction: asc or desc", dataType = "String", example = "desc")</#if>
+    @Pattern(regexp = "(?i)asc|desc", message = "The sort direction must be asc or desc", groups = {Default.class})
     private String orderDirection = "desc";
 <#list table.columns as column><#if column.enableLike == 1>
 
-    @ApiModelProperty(value = "${column.columnComment!''}模糊匹配值", dataType = "String", example = "abc")
+    @ApiModelProperty(value = "${column.columnComment!''}fuzzy match value", dataType = "String", example = "abc")
     private ${column.columnJavaType} ${column.columnCamelNameLower}Like;
 </#if></#list>
 

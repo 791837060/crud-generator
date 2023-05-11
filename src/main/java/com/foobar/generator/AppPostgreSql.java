@@ -42,11 +42,19 @@ public class AppPostgreSql {
 
         //输出目录的绝对路径(留空则生成到当前用户主目录)
         rp.setOutputPath("/Users/zenghuikang/crud-generator/src/gen/borrow_history");
+        rp.setOutputPath("/Users/zenghuikang/crud-generator/src/gen/borrow_summary");
+        rp.setOutputPath("/Users/zenghuikang/crud-generator/src/gen/lending_pool");
+        rp.setOutputPath("/Users/zenghuikang/crud-generator/src/gen/lending_history");
+        rp.setOutputPath("/Users/zenghuikang/crud-generator/src/gen/lending_summary");
 
         ///Users/zenghuikang/openx/opnx-api/service-mortgage
 
         //表名
         TableContext table = TableContext.withName("borrow_history");
+         table = TableContext.withName("borrow_summary");
+         table = TableContext.withName("lending_pool");
+         table = TableContext.withName("lending_history");
+         table = TableContext.withName("lending_summary");
 
         //需去掉的表名前缀(留空不去掉任何前缀)
         table.setTableNamePrefixToRemove(null);

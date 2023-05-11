@@ -30,7 +30,7 @@ public class RunParam {
     /**
      * 作者
      */
-    private String author;
+    private String author = "jack";
 
     /**
      * 返回结果类路径

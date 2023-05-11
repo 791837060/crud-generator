@@ -34,7 +34,7 @@ public class CommonConverter {
      */
     public static <S, T> T convert(S src, Class<T> target){
         if(src == null || target == null) {
-            throw new IllegalArgumentException("待转换的类型为空");
+            throw new IllegalArgumentException("The type to be converted is null");
         }
         BeanCopier bc = getBeanCopier(src.getClass(), target);
         try {
@@ -59,7 +59,7 @@ public class CommonConverter {
      */
     public static <S, T> PageInfo<T> convertPageInfo(PageInfo<S> src, Class<T> target) {
          if (src == null || target == null) {
-             throw new IllegalArgumentException("待转换的类型为空");
+             throw new IllegalArgumentException("The type to be converted is null");
          }
          PageInfo<T> b = new PageInfo<>();
          b.setTotal(src.getTotal());
@@ -139,7 +139,7 @@ public class CommonConverter {
 
     private static BeanCopier getBeanCopier(Class source, Class target) {
         if (source == null || target == null) {
-            throw new IllegalArgumentException("待转换的类型为空");
+            throw new IllegalArgumentException("The type to be converted is null");
         }
         return beanCopierMap.computeIfAbsent(source.getName() + "/" + target.getName(), k -> BeanCopier.create(source, target, false));
     }

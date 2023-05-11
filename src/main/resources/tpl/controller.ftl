@@ -49,7 +49,7 @@ public class ${table.javaClassName}Controller {
      * @param query           查询条件
      * @return 分页查询结果
      */<#if useSwagger == 1>
-    @ApiOperation(value = "分页查询${table.comments}数据", httpMethod = "GET",tags = {"分页查询${table.comments}数据"})</#if>
+    @ApiOperation(value = "Paging query ${table.comments} data", httpMethod = "GET",tags = {"Paging query ${table.comments} data"})</#if>
     @GetMapping(value = "/getRecordList")
     public <#if resultClassName??>${resultClassName}<</#if>PageInfo<${table.javaClassName}VO><#if resultClassName??>></#if> getRecordList(@Validated({Default.class}) ${table.javaClassName}QueryVO query) {
         PageInfo<${table.javaClassName}DTO> pageInfo = ${table.javaClassNameLower}Service.getRecordList(${table.javaClassName}Converter.voToQueryDTO(query));
@@ -63,9 +63,9 @@ public class ${table.javaClassName}Controller {
      * @param ${pk.columnCamelNameLower}  待查询的${table.comments}记录${pk.columnComment}
      * @return ${table.comments}数据
      */
-    @ApiOperation(value = "根据主键查询${table.comments}数据", httpMethod = "GET",tags = {"根据主键查询${table.comments}数据"})
+    @ApiOperation(value = "Query ${table.comments} data according to the primary key", httpMethod = "GET",tags = {"Query ${table.comments} data according to the primary key"})
     @GetMapping(value = "/getRecord")
-    public <#if resultClassName??>${resultClassName}<</#if>${table.javaClassName}VO<#if resultClassName??>></#if> getRecord(@ApiParam(value = "待查询的${table.comments}记录${pk.columnComment}", type = "${pk.columnJavaType}", required = true, example = "1") @RequestParam("${pk.columnCamelNameLower}") ${pk.columnJavaType} ${pk.columnCamelNameLower}) {
+    public <#if resultClassName??>${resultClassName}<</#if>${table.javaClassName}VO<#if resultClassName??>></#if> getRecord(@ApiParam(value = "${table.comments} records ${pk.columnComment} to be queried", type = "${pk.columnJavaType}", required = true, example = "1") @RequestParam("${pk.columnCamelNameLower}") ${pk.columnJavaType} ${pk.columnCamelNameLower}) {
         return <#if resultClassName??>new ${resultClassName}(</#if>${table.javaClassName}Converter.dtoToVO(${table.javaClassNameLower}Service.get${table.javaClassName}By${pk.columnCamelNameUpper}(${pk.columnCamelNameLower}))<#if resultClassName??>)</#if>;
     }</#if>
 
@@ -75,7 +75,7 @@ public class ${table.javaClassName}Controller {
      * @param vo    待插入的数据
      * @return 是否成功
      */<#if useSwagger == 1>
-    @ApiOperation(value = "插入${table.comments}记录", httpMethod = "POST",tags = {"插入${table.comments}记录"})</#if>
+    @ApiOperation(value = "Insert ${table.comments} records", httpMethod = "POST",tags = {"Insert ${table.comments} records"})</#if>
     @PostMapping(value = "/insert")
     public <#if resultClassName??>${resultClassName}<</#if>Boolean<#if resultClassName??>></#if> insert(@RequestBody @Validated({InsertGroup.class, Default.class}) ${table.javaClassName}VO vo) {
         return <#if resultClassName??>new ${resultClassName}(</#if>${table.javaClassNameLower}Service.insert(${table.javaClassName}Converter.voToDTO(vo))<#if resultClassName??>)</#if>;
@@ -87,10 +87,10 @@ public class ${table.javaClassName}Controller {
      * @param vo    待更新的数据
      * @return 是否成功
     */<#if useSwagger == 1>
-    @ApiOperation(value = "更新${table.comments}记录", httpMethod = "POST", tags = {"更新${table.comments}记录"})</#if>
+    @ApiOperation(value = "Update ${table.comments} records", httpMethod = "POST", tags = {"Update ${table.comments} records"})</#if>
     @PostMapping(value = "/update")
     public <#if resultClassName??>${resultClassName}<</#if>Boolean<#if resultClassName??>></#if> update(@RequestBody @Validated({UpdateGroup.class, Default.class}) ${table.javaClassName}VO vo) {
-        Preconditions.checkArgument(<#if pk??>vo.get${pk.columnCamelNameUpper}() != null, "待更新的${table.comments}记录${pk.columnComment}为空"</#if>);
+        Preconditions.checkArgument(<#if pk??>vo.get${pk.columnCamelNameUpper}() != null, "The ${table.comments} record ${pk.columnComment} to be updated is empty"</#if>);
         return <#if resultClassName??>new ${resultClassName}(</#if>${table.javaClassNameLower}Service.update(${table.javaClassName}Converter.voToDTO(vo))<#if resultClassName??>)</#if>;
     }
 
@@ -100,9 +100,9 @@ public class ${table.javaClassName}Controller {
      * @param <#if pk??>${pk.columnCamelNameLower}  待删除的${table.comments}记录${pk.columnComment}</#if>
      * @return 是否成功
      */<#if useSwagger == 1>
-    @ApiOperation(value = "删除${table.comments}记录", httpMethod = "DELETE", tags = {"删除${table.comments}记录"})</#if>
+    @ApiOperation(value = "Delete ${table.comments} records", httpMethod = "DELETE", tags = {"Delete ${table.comments} records"})</#if>
     @DeleteMapping(value = "/delete/{${pk.columnCamelNameLower}}")
-    public <#if resultClassName??>${resultClassName}<</#if>Boolean<#if resultClassName??>></#if> delete(<#if pk??>@ApiParam(value = "待删除的${table.comments}记录${pk.columnComment}", type = "${pk.columnJavaType}", required = true, example = "1") @PathVariable("${pk.columnCamelNameLower}") ${pk.columnJavaType} ${pk.columnCamelNameLower}</#if>) {
+    public <#if resultClassName??>${resultClassName}<</#if>Boolean<#if resultClassName??>></#if> delete(<#if pk??>@ApiParam(value = "${table.comments} records ${pk.columnComment} to be deleted", type = "${pk.columnJavaType}", required = true, example = "1") @PathVariable("${pk.columnCamelNameLower}") ${pk.columnJavaType} ${pk.columnCamelNameLower}</#if>) {
         return <#if resultClassName??>new ${resultClassName}(</#if>${table.javaClassNameLower}Service.delete(${pk.columnCamelNameLower})<#if resultClassName??>)</#if>;
     }
 }
