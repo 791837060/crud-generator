@@ -1,0 +1,1 @@
+curl -v -H "Accept: application/json" -H "Content-type: application/json;charset=UTF-8" -X POST -d '{"id":"PB02YsoQDzkWFJM5HyLbZW36mBVGLCmI","collateral":"BTC","quantity":92,"amount":21}' http://127.0.0.1:8333/local_claim/borrowHistory/insert
