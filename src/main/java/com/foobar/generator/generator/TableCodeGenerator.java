@@ -607,7 +607,11 @@ public class TableCodeGenerator {
             if (ti == null) {
                 continue;
             }
-            File dir = new File(ti.toRealPath(baseOutputPath));
+            String path = ti.getPath();
+            if(StringUtils.isBlank(path)){
+                path = ti.toRealPath(baseOutputPath);
+            }
+            File dir = new File(path);
             if (!dir.isDirectory()) {
                 throw new RuntimeException("路径" + dir.getAbsolutePath() + "不是目录");
             }

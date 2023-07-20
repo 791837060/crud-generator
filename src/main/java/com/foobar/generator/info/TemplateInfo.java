@@ -32,6 +32,8 @@ public class TemplateInfo {
      */
     private String targetBaseDirName;
 
+    private String path;
+
     /**
      * 是否为核心模板
      */
@@ -77,6 +79,14 @@ public class TemplateInfo {
 
     public void setTargetBaseDirName(String targetBaseDirName) {
         this.targetBaseDirName = targetBaseDirName;
+    }
+
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
     }
 
     public int getIsCore() {

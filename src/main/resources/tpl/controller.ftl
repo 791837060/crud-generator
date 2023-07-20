@@ -66,7 +66,7 @@ public class ${table.javaClassName}Controller {
     @ApiOperation(value = "Query ${table.comments} data according to the primary key", httpMethod = "GET",tags = {"Query ${table.comments} data according to the primary key"})
     @GetMapping(value = "/getRecord")
     public <#if resultClassName??>${resultClassName}<</#if>${table.javaClassName}VO<#if resultClassName??>></#if> getRecord(@ApiParam(value = "${table.comments} records ${pk.columnComment} to be queried", type = "${pk.columnJavaType}", required = true, example = "1") @RequestParam("${pk.columnCamelNameLower}") ${pk.columnJavaType} ${pk.columnCamelNameLower}) {
-        return <#if resultClassName??>new ${resultClassName}(</#if>${table.javaClassName}Converter.dtoToVO(${table.javaClassNameLower}Service.get${table.javaClassName}By${pk.columnCamelNameUpper}(${pk.columnCamelNameLower}))<#if resultClassName??>)</#if>;
+        return <#if resultClassName??>new ${resultClassName}(</#if>${table.javaClassName}Converter.dtoToVO(${table.javaClassNameLower}Service.getRecord(${pk.columnCamelNameLower}))<#if resultClassName??>)</#if>;
     }</#if>
 
     /**

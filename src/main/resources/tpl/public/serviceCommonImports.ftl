@@ -12,4 +12,4 @@ import ${basePkgName}.dto.${table.javaClassName}DTO;
 import ${basePkgName}.dto.${table.javaClassName}QueryDTO;
 import ${basePkgName}.util.${table.javaClassName}Converter;
 import ${basePkgName}.service.I${table.javaClassName}Service;
-import ${basePkgName}.dao.${table.javaClassName}Mapper;
+import ${basePkgName}.mapper.primary.${table.javaClassName}Mapper;
