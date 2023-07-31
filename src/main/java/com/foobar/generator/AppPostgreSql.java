@@ -18,43 +18,99 @@ public class AppPostgreSql {
         param.setDbType(DatabaseType.POSTGRESQL);
 
         //数据库主机名或IP
-        param.setHost("172.21.31.3");
-
+        param.setHost("172.21.31.3"); //kiwi
         //数据库端口号
-        param.setPort("26000");
+        param.setPort("26000"); //kiwi
+        //数据库实例名(oracle填写实例名，mysql或sqlserver留空)
+        param.setServiceName("coinflex_dev_kiwi"); //kiwi
+        //数据库用户名
+        param.setUsername("coinflex");
+
+        //数据库主机名或IP
+        //param.setHost("172.21.31.251"); //lemon
+        //数据库端口号
+        //param.setPort("26257"); //lemon
+        //数据库实例名(oracle填写实例名，mysql或sqlserver留空)
+        //param.setServiceName("coinflex_dev_lemon"); //lemon
+        //数据库用户名
+        //param.setUsername("root");
 
         //schema名称(oracle填写Schema名称，mysql或sqlserver则填写数据库名称)
         param.setSchema("public");
 
-        //数据库用户名
-        param.setUsername("coinflex");
-
         //数据库用户密码
         param.setPassword(null);
 
-        //数据库实例名(oracle填写实例名，mysql或sqlserver留空)
-        param.setServiceName("coinflex_dev_kiwi");
+
         TableCodeGenerator generator = new TableCodeGenerator(param);
 
         RunParam rp = new RunParam();
         //java基础包名(留空则默认使用com.example.myapp)
+        rp.setBasePkgName("com.coinflex.api.account");
         rp.setBasePkgName("com.coinflex.api.mortgage");
+        rp.setBasePkgName("com.coinflex.api.accountvalue");
+        rp.setBasePkgName("com.coinflex.api.vault");
 
         //输出目录的绝对路径(留空则生成到当前用户主目录)
+
+
+
+        rp.setOutputPath("/Users/zenghuikang/crud-generator/src/gen/borrow_snapshots");
+        rp.setOutputPath("/Users/zenghuikang/crud-generator/src/gen/lending_pool");
+        rp.setOutputPath("/Users/zenghuikang/crud-generator/src/gen/all");
+        rp.setOutputPath("/Users/zenghuikang/crud-generator/src/gen/t_partner");
         rp.setOutputPath("/Users/zenghuikang/crud-generator/src/gen/borrow_history");
         rp.setOutputPath("/Users/zenghuikang/crud-generator/src/gen/borrow_summary");
-        rp.setOutputPath("/Users/zenghuikang/crud-generator/src/gen/lending_pool");
-        rp.setOutputPath("/Users/zenghuikang/crud-generator/src/gen/lending_history");
         rp.setOutputPath("/Users/zenghuikang/crud-generator/src/gen/lending_summary");
+        rp.setOutputPath("/Users/zenghuikang/crud-generator/src/gen/lending_history");
+        rp.setOutputPath("/Users/zenghuikang/crud-generator/src/gen/lending_snapshots");
+        rp.setOutputPath("/Users/zenghuikang/crud-generator/src/gen/ltv_setting");
+        rp.setOutputPath("/Users/zenghuikang/crud-generator/src/gen/ousd_interest_setting");
+        rp.setOutputPath("/Users/zenghuikang/crud-generator/src/gen/vault_record");
+        rp.setOutputPath("/Users/zenghuikang/crud-generator/src/gen/vault_summary");
+
+
+        rp.setOutputPath("/Users/zenghuikang/crud-generator/src/gen/position_snapshots");
+        rp.setOutputPath("/Users/zenghuikang/crud-generator/src/gen/redemption_quota_summary");
+        rp.setOutputPath("/Users/zenghuikang/crud-generator/src/gen/coin_convert_record");
+
+        rp.setOutputPath("/Users/zenghuikang/crud-generator/src/gen/vault_snapshots");
+        rp.setOutputPath("/Users/zenghuikang/crud-generator/src/gen/interest_summary");
+        rp.setOutputPath("/Users/zenghuikang/crud-generator/src/gen/vault_balance_snapshots");
+        rp.setOutputPath("/Users/zenghuikang/crud-generator/src/gen/vault_pool");
+
 
         ///Users/zenghuikang/openx/opnx-api/service-mortgage
 
+
+
+
         //表名
         TableContext table = TableContext.withName("borrow_history");
-         table = TableContext.withName("borrow_summary");
          table = TableContext.withName("lending_pool");
-         table = TableContext.withName("lending_history");
-         table = TableContext.withName("lending_summary");
+         table = TableContext.withName("borrow_snapshots");
+         table = TableContext.withName("t_partner");
+         table = TableContext.withName("borrow_history");
+        table = TableContext.withName("borrow_summary");
+        table = TableContext.withName("lending_summary");
+        table = TableContext.withName("lending_history");
+        table = TableContext.withName("lending_snapshots");
+        table = TableContext.withName("ltv_setting");
+        table = TableContext.withName("ousd_interest_setting");
+        table = TableContext.withName("vault_record");
+        table = TableContext.withName("vault_summary");
+
+
+        table = TableContext.withName("position_snapshots");
+        table = TableContext.withName("redemption_quota_summary");
+        table = TableContext.withName("coin_convert_record");
+
+        table = TableContext.withName("vault_snapshots");
+        table = TableContext.withName("interest_summary");
+        table = TableContext.withName("vault_balance_snapshots");
+        table = TableContext.withName("vault_pool");
+
+
 
         //需去掉的表名前缀(留空不去掉任何前缀)
         table.setTableNamePrefixToRemove(null);

@@ -1,0 +1,1 @@
+curl -v -H "Accept: application/json" -H "Content-type: application/json;charset=UTF-8" -X POST -d '{"id":55,"mainAccountId":80,"quantity":90,"fromCoin":"ciVLfRlOgQ","toCoin":"dOeMO","businessType":"rAW4jmUDn84BcLns5sc2bFW0fT","status":"I8UeQkoKW7N15UKcn6XIfg4hiicOQ","requestTime":1689044183666}' http://localhost:8080/coinConvertRecord/update

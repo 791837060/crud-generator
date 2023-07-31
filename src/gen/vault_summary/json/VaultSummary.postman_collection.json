@@ -1,0 +1,267 @@
+{
+  "info": {
+    "_postman_id": "f6d3a517-be77-4a02-a5f8-a5bf5bb39103",
+    "name": "vault_summary服务API接口",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "分页查询vault_summary数据",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "6c342893-730a-4783-ac88-1af58fec2536",
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": []
+        },
+        "url": {
+          "raw": "{{baseURL}}/vaultSummary/getVaultSummaryList",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "vaultSummary",
+            "getVaultSummaryList"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "",
+              "description": "id"
+            },
+                        {
+              "key": "accountId",
+              "value": "",
+              "description": "account_id"
+            },
+                        {
+              "key": "mainAccountId",
+              "value": "",
+              "description": "main_account_id"
+            },
+                        {
+              "key": "depositAmount",
+              "value": "",
+              "description": "deposit_amount"
+            },
+                        {
+              "key": "takeEffectAmount",
+              "value": "",
+              "description": "take_effect_amount"
+            },
+                        {
+              "key": "poolId",
+              "value": "",
+              "description": "pool_id"
+            },
+                        {
+              "key": "lastUpdatedAt",
+              "value": "",
+              "description": "last_updated_at"
+            },
+                        {
+              "key": "dividendAmount",
+              "value": "",
+              "description": "dividend_amount"
+            },
+                        {
+              "key": "totalAmount",
+              "value": "",
+              "description": "total_amount"
+            },
+                        {
+              "key": "totalRedeem",
+              "value": "",
+              "description": "total_redeem"
+            },
+                        {
+              "key": "createdAt",
+              "value": "",
+              "description": "created_at"
+            }
+            ,
+            {
+              "key": "pageNo",
+              "value": "1",
+              "description": "页码"
+            },
+            {
+              "key": "pageSize",
+              "value": "10",
+              "description": "分页大小"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+
+    {
+      "name": "插入vault_summary数据",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "1ef785b8-467d-4555-8f14-98c5007879e2",
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"accountId\": \"\",\n    \"mainAccountId\": \"\",\n    \"depositAmount\": \"\",\n    \"takeEffectAmount\": \"\",\n    \"poolId\": \"\",\n    \"lastUpdatedAt\": \"\",\n    \"dividendAmount\": \"\",\n    \"totalAmount\": \"\",\n    \"totalRedeem\": \"\",\n    \"createdAt\": \"\"\n}",
+          "options": {
+              "raw": {
+                "language": "json"
+              }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}/vaultSummary/insert",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "vaultSummary",
+            "insert"
+          ]
+        }
+      },
+      "response": []
+    },
+
+    {
+      "name": "更新vault_summary数据",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "4ef06ed1-5898-489f-b48c-fd4d619a88c2",
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+            "mode": "raw",
+            "raw": "{\n    \"id\": \"\",\n    \"accountId\": \"\",\n    \"mainAccountId\": \"\",\n    \"depositAmount\": \"\",\n    \"takeEffectAmount\": \"\",\n    \"poolId\": \"\",\n    \"lastUpdatedAt\": \"\",\n    \"dividendAmount\": \"\",\n    \"totalAmount\": \"\",\n    \"totalRedeem\": \"\",\n    \"createdAt\": \"\"\n}",
+            "options": {
+                "raw": {
+                "language": "json"
+                }
+            }
+        },
+        "url": {
+          "raw": "{{baseURL}}/vaultSummary/update",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "vaultSummary",
+            "update"
+          ]
+        }
+      },
+      "response": []
+    },
+
+    {
+      "name": "删除vault_summary数据",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "33cb257a-f49a-4a12-b3ca-87f312a9f416",
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "id",
+              "value": "",
+              "description": "id"
+            }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+          ]
+        },
+        "url": {
+          "raw": "{{baseURL}}/vaultSummary/delete",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "vaultSummary",
+            "delete"
+          ]
+        }
+      },
+      "response": []
+    }
+
+  ],
+  "protocolProfileBehavior": {}
+}

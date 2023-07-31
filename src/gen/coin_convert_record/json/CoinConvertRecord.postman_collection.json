@@ -1,0 +1,249 @@
+{
+  "info": {
+    "_postman_id": "70425ae6-b774-46db-bd30-02e3c67651fa",
+    "name": "coin_convert_record服务API接口",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "分页查询coin_convert_record数据",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "c51a919a-02cf-467b-8812-31b066e4becd",
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": []
+        },
+        "url": {
+          "raw": "{{baseURL}}/coinConvertRecord/getCoinConvertRecordList",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "coinConvertRecord",
+            "getCoinConvertRecordList"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "",
+              "description": "id"
+            },
+                        {
+              "key": "mainAccountId",
+              "value": "",
+              "description": "main_account_id"
+            },
+                        {
+              "key": "quantity",
+              "value": "",
+              "description": "quantity"
+            },
+                        {
+              "key": "fromCoin",
+              "value": "",
+              "description": "from_coin"
+            },
+                        {
+              "key": "toCoin",
+              "value": "",
+              "description": "to_coin"
+            },
+                        {
+              "key": "businessType",
+              "value": "",
+              "description": "business_type"
+            },
+                        {
+              "key": "status",
+              "value": "",
+              "description": "status"
+            },
+                        {
+              "key": "requestTime",
+              "value": "",
+              "description": "request_time"
+            }
+            ,
+            {
+              "key": "pageNo",
+              "value": "1",
+              "description": "页码"
+            },
+            {
+              "key": "pageSize",
+              "value": "10",
+              "description": "分页大小"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+
+    {
+      "name": "插入coin_convert_record数据",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "bc33fe18-8f0a-4fcf-89c1-abafd58d86b8",
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"mainAccountId\": \"\",\n    \"quantity\": \"\",\n    \"fromCoin\": \"\",\n    \"toCoin\": \"\",\n    \"businessType\": \"\",\n    \"status\": \"\",\n    \"requestTime\": \"\"\n}",
+          "options": {
+              "raw": {
+                "language": "json"
+              }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}/coinConvertRecord/insert",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "coinConvertRecord",
+            "insert"
+          ]
+        }
+      },
+      "response": []
+    },
+
+    {
+      "name": "更新coin_convert_record数据",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "a5f798b8-5b7f-413c-962d-338b0c98f1ed",
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+            "mode": "raw",
+            "raw": "{\n    \"id\": \"\",\n    \"mainAccountId\": \"\",\n    \"quantity\": \"\",\n    \"fromCoin\": \"\",\n    \"toCoin\": \"\",\n    \"businessType\": \"\",\n    \"status\": \"\",\n    \"requestTime\": \"\"\n}",
+            "options": {
+                "raw": {
+                "language": "json"
+                }
+            }
+        },
+        "url": {
+          "raw": "{{baseURL}}/coinConvertRecord/update",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "coinConvertRecord",
+            "update"
+          ]
+        }
+      },
+      "response": []
+    },
+
+    {
+      "name": "删除coin_convert_record数据",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "55b9913e-c32e-4ac6-b2c9-b75f6073d311",
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "id",
+              "value": "",
+              "description": "id"
+            }
+            
+            
+            
+            
+            
+            
+            
+          ]
+        },
+        "url": {
+          "raw": "{{baseURL}}/coinConvertRecord/delete",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "coinConvertRecord",
+            "delete"
+          ]
+        }
+      },
+      "response": []
+    }
+
+  ],
+  "protocolProfileBehavior": {}
+}

@@ -35,7 +35,7 @@ import io.swagger.annotations.ApiOperation;
  * @author ${table.author!''}
  */<#if useSwagger == 1>
 @Api(value = "/${table.javaClassNameLower}", tags = {"${table.comments}API"})</#if>
-@RequestMapping("/${table.javaClassNameLower}")
+@RequestMapping("/private/${table.javaClassNameLower}")
 @RestController
 public class ${table.javaClassName}Controller {
     private static final Logger logger = LoggerFactory.getLogger(${table.javaClassName}Controller.class);

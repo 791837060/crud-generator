@@ -1,0 +1,1 @@
+curl -v -H "Accept: application/json" -H "Content-type: application/json;charset=UTF-8" -X POST -d '{"id":63,"accountId":20,"marketCode":"mE6Z7vxDeNYUQoH","quantity":84,"markPrice":53,"snapshotTime":1689639689064}' http://localhost:8080/positionSnapshots/update

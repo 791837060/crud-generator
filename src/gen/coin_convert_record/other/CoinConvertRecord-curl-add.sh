@@ -1,0 +1,1 @@
+curl -v -H "Accept: application/json" -H "Content-type: application/json;charset=UTF-8" -X POST -d '{"id":67,"mainAccountId":79,"quantity":61,"fromCoin":"9pgTnJOFQzj7MNlEDvTRcsLhZYAv1HJvleA","toCoin":"LMQy0qr","businessType":"bKgp6iFjvIdkmTOpo8vFhujRgTLC","status":"X0","requestTime":1689067328980}' http://localhost:8080/coinConvertRecord/insert

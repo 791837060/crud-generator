@@ -1,0 +1,237 @@
+{
+  "info": {
+    "_postman_id": "73dd981d-3245-448d-8917-bbe38bef846b",
+    "name": "balance_snapshots服务API接口",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "分页查询balance_snapshots数据",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "e44cc8e5-bdab-4b8a-88a1-89e44ee01a2c",
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": []
+        },
+        "url": {
+          "raw": "{{baseURL}}/balanceSnapshots/getBalanceSnapshotsList",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "balanceSnapshots",
+            "getBalanceSnapshotsList"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "",
+              "description": "id"
+            },
+                        {
+              "key": "accountId",
+              "value": "",
+              "description": "account_id"
+            },
+                        {
+              "key": "instrumentId",
+              "value": "",
+              "description": "instrument_id"
+            },
+                        {
+              "key": "quantity",
+              "value": "",
+              "description": "quantity"
+            },
+                        {
+              "key": "snapshotTime",
+              "value": "",
+              "description": "snapshot_time"
+            },
+                        {
+              "key": "created",
+              "value": "",
+              "description": "created"
+            }
+            ,
+            {
+              "key": "pageNo",
+              "value": "1",
+              "description": "页码"
+            },
+            {
+              "key": "pageSize",
+              "value": "10",
+              "description": "分页大小"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+
+    {
+      "name": "插入balance_snapshots数据",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "ef329233-c0dd-4f98-a08d-2cba408e4caa",
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"accountId\": \"\",\n    \"instrumentId\": \"\",\n    \"quantity\": \"\",\n    \"snapshotTime\": \"\",\n    \"created\": \"\"\n}",
+          "options": {
+              "raw": {
+                "language": "json"
+              }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}/balanceSnapshots/insert",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "balanceSnapshots",
+            "insert"
+          ]
+        }
+      },
+      "response": []
+    },
+
+    {
+      "name": "更新balance_snapshots数据",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "433eeaf9-fa43-44de-a659-4551800e4a94",
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+            "mode": "raw",
+            "raw": "{\n    \"id\": \"\",\n    \"accountId\": \"\",\n    \"instrumentId\": \"\",\n    \"quantity\": \"\",\n    \"snapshotTime\": \"\",\n    \"created\": \"\"\n}",
+            "options": {
+                "raw": {
+                "language": "json"
+                }
+            }
+        },
+        "url": {
+          "raw": "{{baseURL}}/balanceSnapshots/update",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "balanceSnapshots",
+            "update"
+          ]
+        }
+      },
+      "response": []
+    },
+
+    {
+      "name": "删除balance_snapshots数据",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "dd26a81e-b399-4509-b24f-9ab86f4dc851",
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "id",
+              "value": "",
+              "description": "id"
+            }
+            
+            
+            
+            
+            
+          ]
+        },
+        "url": {
+          "raw": "{{baseURL}}/balanceSnapshots/delete",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "balanceSnapshots",
+            "delete"
+          ]
+        }
+      },
+      "response": []
+    }
+
+  ],
+  "protocolProfileBehavior": {}
+}
