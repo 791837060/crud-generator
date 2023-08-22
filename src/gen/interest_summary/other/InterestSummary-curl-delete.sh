@@ -1,1 +1,0 @@
-curl -v -X DELETE -d http://localhost:8080/interestSummary/delete/47

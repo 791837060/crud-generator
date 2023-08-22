@@ -1,0 +1,292 @@
+[
+  {
+    "templateName": "origDomain.ftl",
+    "targetBaseDirName": "java",
+    "path": "/Users/zenghuikang/openx/opnx-api-master/service-vault/src/main/java/com/coinflex/api/vault/domain",
+    "targetPkgName": "domain",
+    "targetFileName": "#DO.java",
+    "isCore": 1,
+    "remark": "适用于原版mybatis的实体类"
+  },
+  {
+    "templateName": "vo.ftl",
+    "targetBaseDirName": "java",
+    "path": "/Users/zenghuikang/openx/opnx-api-master/service-vault/src/main/java/com/coinflex/api/vault/vo",
+    "targetPkgName": "vo",
+    "targetFileName": "#VO.java",
+    "isCore": 1,
+    "remark": "VO"
+  },
+  {
+    "templateName": "dto.ftl",
+    "targetBaseDirName": "java",
+    "path": "/Users/zenghuikang/openx/opnx-api-master/service-vault/src/main/java/com/coinflex/api/vault/dto",
+    "targetPkgName": "dto",
+    "targetFileName": "#DTO.java",
+    "isCore": 1,
+    "remark": "DTO"
+  },
+  {
+    "templateName": "tkDomain.ftl",
+    "targetBaseDirName": "java",
+    "path": "/Users/zenghuikang/openx/opnx-api-master/service-vault/src/main/java/com/coinflex/api/vault/domain",
+    "targetPkgName": "domain",
+    "targetFileName": "#DO.java",
+    "isCore": 1,
+    "remark": "适用于mybatis通用Mapper的实体类"
+  },
+  {
+    "templateName": "mpDomain.ftl",
+    "targetBaseDirName": "java",
+    "path": "/Users/zenghuikang/openx/opnx-api-master/service-vault/src/main/java/com/coinflex/api/vault/domain",
+    "targetPkgName": "domain",
+    "targetFileName": "#DO.java",
+    "isCore": 1,
+    "remark": "适用于MybatisPlus的实体类"
+  },
+  {
+    "templateName": "origMapperXml.ftl",
+    "targetBaseDirName": "resources",
+    "path": "/Users/zenghuikang/openx/opnx-api-master/service-vault/src/main/resources/mapper/primary",
+    "targetPkgName": "mapper.primary",
+    "targetFileName": "#Mapper.xml",
+    "isCore": 1,
+    "remark": "适用于原版mybatis的Mapper XML"
+  },
+  {
+    "templateName": "origMapperClass.ftl",
+    "targetBaseDirName": "java",
+    "path": "/Users/zenghuikang/openx/opnx-api-master/service-vault/src/main/java/com/coinflex/api/vault/mapper/primary",
+    "targetPkgName": "mapper.primary",
+    "targetFileName": "#Mapper.java",
+    "isCore": 1,
+    "overwriteExistingFile": 1,
+    "remark": "适用于原版mybatis的Mapper接口"
+  },
+  {
+    "templateName": "tkMapperClass.ftl",
+    "targetBaseDirName": "java",
+    "path": "/Users/zenghuikang/openx/opnx-api-master/service-vault/src/main/java/com/coinflex/api/vault/mapper/primary",
+    "targetPkgName": "mapper.primary",
+    "targetFileName": "#Mapper.java",
+    "isCore": 1,
+    "overwriteExistingFile": 1,
+    "remark": "适用于mybatis通用Mapper的Mapper接口"
+  },
+  {
+    "templateName": "mpMapperClass.ftl",
+    "targetBaseDirName": "java",
+    "path": "/Users/zenghuikang/openx/opnx-api-master/service-vault/src/main/java/com/coinflex/api/vault/mapper/primary",
+    "targetPkgName": "mapper.primary",
+    "targetFileName": "#Mapper.java",
+    "isCore": 1,
+    "overwriteExistingFile": 1,
+    "remark": "适用于MybatisPlus的Mapper接口"
+  },
+  {
+    "templateName": "tkMapperXml.ftl",
+    "targetBaseDirName": "resources",
+    "path": "/Users/zenghuikang/openx/opnx-api-master/service-vault/src/main/resources/mapper/primary",
+    "targetPkgName": "mapper.primary",
+    "targetFileName": "#Mapper.xml",
+    "isCore": 1,
+    "overwriteExistingFile": 1,
+    "remark": "适用于mybatis通用Mapper的Mapper XML"
+  },
+  {
+    "templateName": "mpMapperXml.ftl",
+    "targetBaseDirName": "resources",
+    "path": "/Users/zenghuikang/openx/opnx-api-master/service-vault/src/main/resources/mapper/primary",
+    "targetPkgName": "mapper.primary",
+    "targetFileName": "#Mapper.xml",
+    "isCore": 1,
+    "overwriteExistingFile": 1,
+    "remark": "适用于MybatisPlus的Mapper XML"
+  },
+  {
+    "templateName": "serviceInterface.ftl",
+    "targetBaseDirName": "java",
+    "path": "/Users/zenghuikang/openx/opnx-api-master/service-vault/src/main/java/com/coinflex/api/vault/service",
+    "targetPkgName": "service",
+    "targetFileName": "I#Service.java",
+    "isCore": 1,
+    "overwriteExistingFile": 1,
+    "remark": "服务接口定义"
+  },
+  {
+    "templateName": "origServiceImpl.ftl",
+    "targetBaseDirName": "java",
+    "path": "/Users/zenghuikang/openx/opnx-api-master/service-vault/src/main/java/com/coinflex/api/vault/service/impl",
+    "targetPkgName": "service",
+    "targetFileName": "#ServiceImpl.java",
+    "isCore": 1,
+    "remark": "适用于原版mybatis的服务接口实现"
+  },
+  {
+    "templateName": "tkServiceImpl.ftl",
+    "targetBaseDirName": "java",
+    "path": "/Users/zenghuikang/openx/opnx-api-master/service-vault/src/main/java/com/coinflex/api/vault/service/impl",
+    "targetPkgName": "service",
+    "targetFileName": "#ServiceImpl.java",
+    "isCore": 1,
+    "remark": "适用于mybatis通用Mapper的服务接口实现"
+  },
+  {
+    "templateName": "mpServiceImpl.ftl",
+    "targetBaseDirName": "java",
+    "path": "/Users/zenghuikang/openx/opnx-api-master/service-vault/src/main/java/com/coinflex/api/vault/service/impl",
+    "targetPkgName": "service",
+    "targetFileName": "#ServiceImpl.java",
+    "isCore": 1,
+    "remark": "适用于MybatisPlus的服务接口实现"
+  },
+  {
+    "templateName": "controller.ftl",
+    "targetBaseDirName": "java",
+    "path": "/Users/zenghuikang/openx/opnx-api-master/service-vault/src/main/java/com/coinflex/api/vault/rest",
+    "targetPkgName": "controller",
+    "targetFileName": "#Controller.java",
+    "isCore": 0,
+    "overwriteExistingFile": 1,
+    "remark": "控制器"
+  },
+  {
+    "templateName": "feignClient.ftl",
+    "targetBaseDirName": "java",
+    "path": "",
+    "targetPkgName": "feign",
+    "targetFileName": "I#Client.java",
+    "isCore": 0,
+    "overwriteExistingFile": 1,
+    "remark": "FeignClient接口"
+  },
+  {
+    "templateName": "feignClientFallback.ftl",
+    "targetBaseDirName": "java",
+    "path": "",
+    "targetPkgName": "feign",
+    "targetFileName": "#ClientFallback.java",
+    "isCore": 0,
+    "overwriteExistingFile": 1,
+    "remark": "FeignClient接口Fallback"
+  },
+  {
+    "templateName": "queryDto.ftl",
+    "targetBaseDirName": "java",
+    "path": "/Users/zenghuikang/openx/opnx-api-master/service-vault/src/main/java/com/coinflex/api/vault/dto",
+    "targetPkgName": "dto",
+    "targetFileName": "#QueryDTO.java",
+    "isCore": 1,
+    "remark": "查询条件DTO"
+  },
+  {
+    "templateName": "queryVo.ftl",
+    "targetBaseDirName": "java",
+    "path": "/Users/zenghuikang/openx/opnx-api-master/service-vault/src/main/java/com/coinflex/api/vault/vo",
+    "targetPkgName": "vo",
+    "targetFileName": "#QueryVO.java",
+    "isCore": 1,
+    "remark": "查询条件VO"
+  },
+  {
+    "templateName": "commonConverter.ftl",
+    "targetBaseDirName": "java",
+    "path": "/Users/zenghuikang/openx/opnx-api-master/service-vault/src/main/java/com/coinflex/api/vault/util",
+    "targetPkgName": "util",
+    "targetFileName": "CommonConverter.java",
+    "isCore": 0,
+    "overwriteExistingFile": 1,
+    "remark": "通用对象转换工具类"
+  },
+  {
+    "templateName": "converter.ftl",
+    "targetBaseDirName": "java",
+    "path": "/Users/zenghuikang/openx/opnx-api-master/service-vault/src/main/java/com/coinflex/api/vault/util",
+    "targetPkgName": "util",
+    "targetFileName": "#Converter.java",
+    "isCore": 1,
+    "remark": "转换工具类"
+  },
+  {
+    "templateName": "validatorInsertGroup.ftl",
+    "targetBaseDirName": "java",
+    "path": "/Users/zenghuikang/openx/opnx-api-master/service-vault/src/main/java/com/coinflex/api/vault/validator",
+    "targetPkgName": "validator",
+    "targetFileName": "InsertGroup.java",
+    "isCore": 0,
+    "overwriteExistingFile": 1,
+    "remark": "校验分组(插入)"
+  },
+  {
+    "templateName": "validatorUpdateGroup.ftl",
+    "targetBaseDirName": "java",
+    "path": "/Users/zenghuikang/openx/opnx-api-master/service-vault/src/main/java/com/coinflex/api/vault/validator",
+    "targetPkgName": "validator",
+    "targetFileName": "UpdateGroup.java",
+    "isCore": 0,
+    "overwriteExistingFile": 1,
+    "remark": "校验分组(更新)"
+  },
+  {
+    "templateName": "unitTestCase.ftl",
+    "targetBaseDirName": "java",
+    "path": "",
+    "targetPkgName": "test",
+    "targetFileName": "#Tests.java",
+    "remark": "单元测试用例"
+  },
+  {
+    "templateName": "postmanCollection.ftl",
+    "targetBaseDirName": "json",
+    "path": "",
+    "targetPkgName": "",
+    "targetFileName": "#.postman_collection.json",
+    "isCore": 1,
+    "remark": "Postman Collection 定义文件"
+  },
+  {
+    "templateName": "postmanEnvironment.ftl",
+    "targetBaseDirName": "json",
+    "path": "",
+    "targetPkgName": "",
+    "targetFileName": "#.postman_environment.json",
+    "isCore": 0,
+    "overwriteExistingFile": 1,
+    "remark": "Postman Environment 定义文件"
+  },
+  {
+    "templateName": "curl-add.ftl",
+    "targetBaseDirName": "other",
+    "path": "",
+    "targetPkgName": "",
+    "targetFileName": "#-curl-add.sh",
+    "isCore": 1,
+    "remark": "CURL新增记录"
+  },
+  {
+    "templateName": "curl-update.ftl",
+    "targetBaseDirName": "other",
+    "path": "",
+    "targetPkgName": "",
+    "targetFileName": "#-curl-update.sh",
+    "isCore": 1,
+    "remark": "CURL修改记录"
+  },
+  {
+    "templateName": "curl-delete.ftl",
+    "targetBaseDirName": "other",
+    "path": "",
+    "targetPkgName": "",
+    "targetFileName": "#-curl-delete.sh",
+    "isCore": 1,
+    "remark": "CURL删除记录"
+  },
+  {
+    "templateName": "html-form.ftl",
+    "targetBaseDirName": "other",
+    "path": "",
+    "targetPkgName": "",
+    "targetFileName": "#-form.html",
+    "remark": "标准HTML表单"
+  }
+]

@@ -1,0 +1,2 @@
+curl -v -H "Accept: application/json" -H "Content-type: application/json;charset=UTF-8" -X POST -d '{"amount": "201","poolId":1}' http://127.0.0.1:8333/local-service-account-value/protected/collateralRecord/stake
+curl -v -H "Accept: application/json" -H "Content-type: application/json;charset=UTF-8" -X POST -d '{"id": 1693525353049665536}' http://127.0.0.1:8333/local-service-account-value/protected/collateralRecord/unstake

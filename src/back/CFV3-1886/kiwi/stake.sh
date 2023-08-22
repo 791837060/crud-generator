@@ -1,0 +1,1 @@
+curl -v -H "Accept: application/json" -H "Content-type: application/json;charset=UTF-8" -X POST -d '{"amount": "201","poolId":1}' https://api-kiwi.cfdev.pro/v2/vault/protected/vaultRecord/stake

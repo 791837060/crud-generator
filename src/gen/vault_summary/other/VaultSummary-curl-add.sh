@@ -1,1 +1,0 @@
-curl -v -H "Accept: application/json" -H "Content-type: application/json;charset=UTF-8" -X POST -d '{"id":72,"accountId":91,"mainAccountId":37,"depositAmount":21,"takeEffectAmount":48,"poolId":88,"lastUpdatedAt":1690029304816,"dividendAmount":43,"totalAmount":54,"totalRedeem":74,"createdAt":1689917218716}' http://localhost:8080/vaultSummary/insert

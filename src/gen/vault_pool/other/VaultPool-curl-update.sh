@@ -1,1 +1,0 @@
-curl -v -H "Accept: application/json" -H "Content-type: application/json;charset=UTF-8" -X POST -d '{"id":19,"token":"4Faym2o5UhNX1S9QBNb0802zK","poolName":"aznBADOwA1jujcgOY","accountId":10,"totalAmount":79,"takeEffectTotalAmount":50}' http://localhost:8080/vaultPool/update

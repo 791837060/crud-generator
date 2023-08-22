@@ -2,7 +2,7 @@
   {
     "templateName": "origDomain.ftl",
     "targetBaseDirName": "java",
-    "path": "/Users/zenghuikang/openx/opnx-api-master/service-vault/src/main/java/com/coinflex/api/vault/domain",
+    "path": "/Users/zenghuikang/openx/opnx-api-master/service-account-value/src/main/java/com/coinflex/api/accountvalue/domain",
     "targetPkgName": "domain",
     "targetFileName": "#DO.java",
     "isCore": 1,
@@ -11,7 +11,7 @@
   {
     "templateName": "vo.ftl",
     "targetBaseDirName": "java",
-    "path": "/Users/zenghuikang/openx/opnx-api-master/service-vault/src/main/java/com/coinflex/api/vault/vo",
+    "path": "/Users/zenghuikang/openx/opnx-api-master/service-account-value/src/main/java/com/coinflex/api/accountvalue/vo",
     "targetPkgName": "vo",
     "targetFileName": "#VO.java",
     "isCore": 1,
@@ -20,7 +20,7 @@
   {
     "templateName": "dto.ftl",
     "targetBaseDirName": "java",
-    "path": "/Users/zenghuikang/openx/opnx-api-master/service-vault/src/main/java/com/coinflex/api/vault/dto",
+    "path": "/Users/zenghuikang/openx/opnx-api-master/service-account-value/src/main/java/com/coinflex/api/accountvalue/dto",
     "targetPkgName": "dto",
     "targetFileName": "#DTO.java",
     "isCore": 1,
@@ -29,7 +29,7 @@
   {
     "templateName": "tkDomain.ftl",
     "targetBaseDirName": "java",
-    "path": "/Users/zenghuikang/openx/opnx-api-master/service-vault/src/main/java/com/coinflex/api/vault/domain",
+    "path": "/Users/zenghuikang/openx/opnx-api-master/service-account-value/src/main/java/com/coinflex/api/accountvalue/domain",
     "targetPkgName": "domain",
     "targetFileName": "#DO.java",
     "isCore": 1,
@@ -38,7 +38,7 @@
   {
     "templateName": "mpDomain.ftl",
     "targetBaseDirName": "java",
-    "path": "/Users/zenghuikang/openx/opnx-api-master/service-vault/src/main/java/com/coinflex/api/vault/domain",
+    "path": "/Users/zenghuikang/openx/opnx-api-master/service-account-value/src/main/java/com/coinflex/api/accountvalue/domain",
     "targetPkgName": "domain",
     "targetFileName": "#DO.java",
     "isCore": 1,
@@ -47,8 +47,8 @@
   {
     "templateName": "origMapperXml.ftl",
     "targetBaseDirName": "resources",
-    "path": "/Users/zenghuikang/openx/opnx-api-master/service-vault/src/main/resources/mapper/primary",
-    "targetPkgName": "mapper.primary",
+    "path": "/Users/zenghuikang/openx/opnx-api-master/service-account-value/src/main/resources/mapper/primary",
+    "targetPkgName": "mapper.mybatis.primary",
     "targetFileName": "#Mapper.xml",
     "isCore": 1,
     "remark": "适用于原版mybatis的Mapper XML"
@@ -56,8 +56,8 @@
   {
     "templateName": "origMapperClass.ftl",
     "targetBaseDirName": "java",
-    "path": "/Users/zenghuikang/openx/opnx-api-master/service-vault/src/main/java/com/coinflex/api/vault/mapper/primary",
-    "targetPkgName": "mapper.primary",
+    "path": "/Users/zenghuikang/openx/opnx-api-master/service-account-value/src/main/java/com/coinflex/api/accountvalue/mapper/mybatis/primary",
+    "targetPkgName": "mapper.mybatis.primary",
     "targetFileName": "#Mapper.java",
     "isCore": 1,
     "overwriteExistingFile": 1,
@@ -66,8 +66,8 @@
   {
     "templateName": "tkMapperClass.ftl",
     "targetBaseDirName": "java",
-    "path": "/Users/zenghuikang/openx/opnx-api-master/service-vault/src/main/java/com/coinflex/api/vault/mapper/primary",
-    "targetPkgName": "mapper.primary",
+    "path": "/Users/zenghuikang/openx/opnx-api-master/service-account-value/src/main/java/com/coinflex/api/accountvalue/mapper/mybatis/primary",
+    "targetPkgName": "mapper.mybatis.primary",
     "targetFileName": "#Mapper.java",
     "isCore": 1,
     "overwriteExistingFile": 1,
@@ -76,8 +76,8 @@
   {
     "templateName": "mpMapperClass.ftl",
     "targetBaseDirName": "java",
-    "path": "/Users/zenghuikang/openx/opnx-api-master/service-vault/src/main/java/com/coinflex/api/vault/mapper/primary",
-    "targetPkgName": "mapper.primary",
+    "path": "/Users/zenghuikang/openx/opnx-api-master/service-account-value/src/main/java/com/coinflex/api/accountvalue/mapper/mybatis/primary",
+    "targetPkgName": "mapper.mybatis.primary",
     "targetFileName": "#Mapper.java",
     "isCore": 1,
     "overwriteExistingFile": 1,
@@ -86,8 +86,8 @@
   {
     "templateName": "tkMapperXml.ftl",
     "targetBaseDirName": "resources",
-    "path": "/Users/zenghuikang/openx/opnx-api-master/service-vault/src/main/resources/mapper/primary",
-    "targetPkgName": "mapper.primary",
+    "path": "/Users/zenghuikang/openx/opnx-api-master/service-account-value/src/main/resources/mapper/primary",
+    "targetPkgName": "mapper.mybatis.primary",
     "targetFileName": "#Mapper.xml",
     "isCore": 1,
     "overwriteExistingFile": 1,
@@ -96,8 +96,8 @@
   {
     "templateName": "mpMapperXml.ftl",
     "targetBaseDirName": "resources",
-    "path": "/Users/zenghuikang/openx/opnx-api-master/service-vault/src/main/resources/mapper/primary",
-    "targetPkgName": "mapper.primary",
+    "path": "/Users/zenghuikang/openx/opnx-api-master/service-account-value/src/main/resources/mapper/primary",
+    "targetPkgName": "mapper.mybatis.primary",
     "targetFileName": "#Mapper.xml",
     "isCore": 1,
     "overwriteExistingFile": 1,
@@ -106,7 +106,7 @@
   {
     "templateName": "serviceInterface.ftl",
     "targetBaseDirName": "java",
-    "path": "/Users/zenghuikang/openx/opnx-api-master/service-vault/src/main/java/com/coinflex/api/vault/service",
+    "path": "/Users/zenghuikang/openx/opnx-api-master/service-account-value/src/main/java/com/coinflex/api/accountvalue/service",
     "targetPkgName": "service",
     "targetFileName": "I#Service.java",
     "isCore": 1,
@@ -116,7 +116,7 @@
   {
     "templateName": "origServiceImpl.ftl",
     "targetBaseDirName": "java",
-    "path": "/Users/zenghuikang/openx/opnx-api-master/service-vault/src/main/java/com/coinflex/api/vault/service/impl",
+    "path": "/Users/zenghuikang/openx/opnx-api-master/service-account-value/src/main/java/com/coinflex/api/accountvalue/service/impl",
     "targetPkgName": "service",
     "targetFileName": "#ServiceImpl.java",
     "isCore": 1,
@@ -125,7 +125,7 @@
   {
     "templateName": "tkServiceImpl.ftl",
     "targetBaseDirName": "java",
-    "path": "/Users/zenghuikang/openx/opnx-api-master/service-vault/src/main/java/com/coinflex/api/vault/service/impl",
+    "path": "/Users/zenghuikang/openx/opnx-api-master/service-account-value/src/main/java/com/coinflex/api/accountvalue/service/impl",
     "targetPkgName": "service",
     "targetFileName": "#ServiceImpl.java",
     "isCore": 1,
@@ -134,7 +134,7 @@
   {
     "templateName": "mpServiceImpl.ftl",
     "targetBaseDirName": "java",
-    "path": "/Users/zenghuikang/openx/opnx-api-master/service-vault/src/main/java/com/coinflex/api/vault/service/impl",
+    "path": "/Users/zenghuikang/openx/opnx-api-master/service-account-value/src/main/java/com/coinflex/api/accountvalue/service/impl",
     "targetPkgName": "service",
     "targetFileName": "#ServiceImpl.java",
     "isCore": 1,
@@ -143,7 +143,7 @@
   {
     "templateName": "controller.ftl",
     "targetBaseDirName": "java",
-    "path": "/Users/zenghuikang/openx/opnx-api-master/service-vault/src/main/java/com/coinflex/api/vault/rest",
+    "path": "/Users/zenghuikang/openx/opnx-api-master/service-account-value/src/main/java/com/coinflex/api/accountvalue/rest",
     "targetPkgName": "controller",
     "targetFileName": "#Controller.java",
     "isCore": 0,
@@ -173,7 +173,7 @@
   {
     "templateName": "queryDto.ftl",
     "targetBaseDirName": "java",
-    "path": "/Users/zenghuikang/openx/opnx-api-master/service-vault/src/main/java/com/coinflex/api/vault/dto",
+    "path": "/Users/zenghuikang/openx/opnx-api-master/service-account-value/src/main/java/com/coinflex/api/accountvalue/dto",
     "targetPkgName": "dto",
     "targetFileName": "#QueryDTO.java",
     "isCore": 1,
@@ -182,7 +182,7 @@
   {
     "templateName": "queryVo.ftl",
     "targetBaseDirName": "java",
-    "path": "/Users/zenghuikang/openx/opnx-api-master/service-vault/src/main/java/com/coinflex/api/vault/vo",
+    "path": "/Users/zenghuikang/openx/opnx-api-master/service-account-value/src/main/java/com/coinflex/api/accountvalue/vo",
     "targetPkgName": "vo",
     "targetFileName": "#QueryVO.java",
     "isCore": 1,
@@ -191,7 +191,7 @@
   {
     "templateName": "commonConverter.ftl",
     "targetBaseDirName": "java",
-    "path": "/Users/zenghuikang/openx/opnx-api-master/service-vault/src/main/java/com/coinflex/api/vault/util",
+    "path": "/Users/zenghuikang/openx/opnx-api-master/service-account-value/src/main/java/com/coinflex/api/accountvalue/util",
     "targetPkgName": "util",
     "targetFileName": "CommonConverter.java",
     "isCore": 0,
@@ -201,7 +201,7 @@
   {
     "templateName": "converter.ftl",
     "targetBaseDirName": "java",
-    "path": "/Users/zenghuikang/openx/opnx-api-master/service-vault/src/main/java/com/coinflex/api/vault/util",
+    "path": "/Users/zenghuikang/openx/opnx-api-master/service-account-value/src/main/java/com/coinflex/api/accountvalue/util",
     "targetPkgName": "util",
     "targetFileName": "#Converter.java",
     "isCore": 1,
@@ -210,7 +210,7 @@
   {
     "templateName": "validatorInsertGroup.ftl",
     "targetBaseDirName": "java",
-    "path": "/Users/zenghuikang/openx/opnx-api-master/service-vault/src/main/java/com/coinflex/api/vault/validator",
+    "path": "/Users/zenghuikang/openx/opnx-api-master/service-account-value/src/main/java/com/coinflex/api/accountvalue/validator",
     "targetPkgName": "validator",
     "targetFileName": "InsertGroup.java",
     "isCore": 0,
@@ -220,7 +220,7 @@
   {
     "templateName": "validatorUpdateGroup.ftl",
     "targetBaseDirName": "java",
-    "path": "/Users/zenghuikang/openx/opnx-api-master/service-vault/src/main/java/com/coinflex/api/vault/validator",
+    "path": "/Users/zenghuikang/openx/opnx-api-master/service-account-value/src/main/java/com/coinflex/api/accountvalue/validator",
     "targetPkgName": "validator",
     "targetFileName": "UpdateGroup.java",
     "isCore": 0,

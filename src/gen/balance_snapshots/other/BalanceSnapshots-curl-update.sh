@@ -1,1 +1,0 @@
-curl -v -H "Accept: application/json" -H "Content-type: application/json;charset=UTF-8" -X POST -d '{"id":70,"accountId":92,"instrumentId":"8511","quantity":17,"snapshotTime":1689813596640,"created":1690014402663}' http://localhost:8080/balanceSnapshots/update

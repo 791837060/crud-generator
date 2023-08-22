@@ -1,1 +1,0 @@
-curl -v -H "Accept: application/json" -H "Content-type: application/json;charset=UTF-8" -X POST -d '{"id":27,"mainAccountId":71,"maxRedemptionAmount":94,"redemptionAmount":97,"availableTime":1689629023912}' http://localhost:8080/redemptionQuotaSummary/update
